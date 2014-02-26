@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		5D0D63A718B0FB4F0058672D /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0D63A618B0FB4F0058672D /* FacebookSDK.framework */; };
 		5D0D63A918B121FE0058672D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0D63A818B121FE0058672D /* QuartzCore.framework */; };
-		5D0D63AB18B59E130058672D /* Gotham-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5D0D63AA18B59CC70058672D /* Gotham-Medium.otf */; };
-		5D0D63AD18B5A13E0058672D /* Gotham-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5D0D63AC18B5A13E0058672D /* Gotham-Book.otf */; };
-		5D0D63B018B8D1F60058672D /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0D63AF18B8D1F60058672D /* UIImage+ImageEffects.m */; };
-		5D0D63B218B8D92D0058672D /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D0D63B118B8D92D0058672D /* background.png */; };
+		5D0D63B418B8ED5D0058672D /* Gotham-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5D0D63B318B8ED5D0058672D /* Gotham-Book.otf */; };
+		5D0D63B618B8ED6A0058672D /* Gotham-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5D0D63B518B8ED6A0058672D /* Gotham-Medium.otf */; };
+		5D0D63B918BD5D030058672D /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0D63B818BD5D030058672D /* LoginView.m */; };
+		5D0D63BB18BD63410058672D /* wallpaper@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D0D63BA18BD63410058672D /* wallpaper@2x.png */; };
 		5D75084D1812C6B600C62D34 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D75084C1812C6B600C62D34 /* Foundation.framework */; };
 		5D75084F1812C6B600C62D34 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D75084E1812C6B600C62D34 /* CoreGraphics.framework */; };
 		5D7508511812C6B600C62D34 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D7508501812C6B600C62D34 /* UIKit.framework */; };
@@ -45,11 +45,11 @@
 /* Begin PBXFileReference section */
 		5D0D63A618B0FB4F0058672D /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		5D0D63A818B121FE0058672D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		5D0D63AA18B59CC70058672D /* Gotham-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-Medium.otf"; path = "../../../../../Downloads/Gotham FONT/Gotham-Medium.otf"; sourceTree = "<group>"; };
-		5D0D63AC18B5A13E0058672D /* Gotham-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-Book.otf"; path = "../../../../../Downloads/Gotham FONT/Gotham-Book.otf"; sourceTree = "<group>"; };
-		5D0D63AE18B8D1F60058672D /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageEffects.h"; path = "../../../../../Downloads/UIImageEffects 2/UIImageEffects/UIImage+ImageEffects.h"; sourceTree = "<group>"; };
-		5D0D63AF18B8D1F60058672D /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageEffects.m"; path = "../../../../../Downloads/UIImageEffects 2/UIImageEffects/UIImage+ImageEffects.m"; sourceTree = "<group>"; };
-		5D0D63B118B8D92D0058672D /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = ../../../../../Downloads/background.png; sourceTree = "<group>"; };
+		5D0D63B318B8ED5D0058672D /* Gotham-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-Book.otf"; path = "../../../../Downloads/Gotham FONT/Gotham-Book.otf"; sourceTree = "<group>"; };
+		5D0D63B518B8ED6A0058672D /* Gotham-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-Medium.otf"; path = "../../../../Downloads/Gotham FONT/Gotham-Medium.otf"; sourceTree = "<group>"; };
+		5D0D63B718BD5D030058672D /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
+		5D0D63B818BD5D030058672D /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
+		5D0D63BA18BD63410058672D /* wallpaper@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "wallpaper@2x.png"; path = "../../../../Downloads/wallpaper@2x.png"; sourceTree = "<group>"; };
 		5D7508491812C6B600C62D34 /* Sale Buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sale Buddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D75084C1812C6B600C62D34 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5D75084E1812C6B600C62D34 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -138,12 +138,11 @@
 		5D7508521812C6B600C62D34 /* Sale Buddy */ = {
 			isa = PBXGroup;
 			children = (
-				5D0D63B118B8D92D0058672D /* background.png */,
 				5D75085B1812C6B600C62D34 /* AppDelegate.h */,
 				5D75085C1812C6B600C62D34 /* AppDelegate.m */,
-				5D0D63AE18B8D1F60058672D /* UIImage+ImageEffects.h */,
-				5D0D63AF18B8D1F60058672D /* UIImage+ImageEffects.m */,
 				5D75085E1812C6B600C62D34 /* Main.storyboard */,
+				5D0D63B718BD5D030058672D /* LoginView.h */,
+				5D0D63B818BD5D030058672D /* LoginView.m */,
 				5D7508611812C6B600C62D34 /* FirstViewController.h */,
 				5D7508621812C6B600C62D34 /* FirstViewController.m */,
 				5D7508641812C6B600C62D34 /* SecondViewController.h */,
@@ -157,8 +156,9 @@
 		5D7508531812C6B600C62D34 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5D0D63AC18B5A13E0058672D /* Gotham-Book.otf */,
-				5D0D63AA18B59CC70058672D /* Gotham-Medium.otf */,
+				5D0D63BA18BD63410058672D /* wallpaper@2x.png */,
+				5D0D63B318B8ED5D0058672D /* Gotham-Book.otf */,
+				5D0D63B518B8ED6A0058672D /* Gotham-Medium.otf */,
 				5DDEA21918A7CC6800FA3892 /* Gotham-Light.ttf */,
 				5D7508541812C6B600C62D34 /* Sale Buddy-Info.plist */,
 				5D7508551812C6B600C62D34 /* InfoPlist.strings */,
@@ -265,13 +265,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D0D63AD18B5A13E0058672D /* Gotham-Book.otf in Resources */,
+				5D0D63BB18BD63410058672D /* wallpaper@2x.png in Resources */,
+				5D0D63B618B8ED6A0058672D /* Gotham-Medium.otf in Resources */,
 				5DDEA21818A7CA3A00FA3892 /* Main.storyboard in Resources */,
 				5DDEA21A18A7CC6800FA3892 /* Gotham-Light.ttf in Resources */,
 				5D7508681812C6B700C62D34 /* Images.xcassets in Resources */,
 				5D7508571812C6B600C62D34 /* InfoPlist.strings in Resources */,
-				5D0D63B218B8D92D0058672D /* background.png in Resources */,
-				5D0D63AB18B59E130058672D /* Gotham-Medium.otf in Resources */,
+				5D0D63B418B8ED5D0058672D /* Gotham-Book.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,9 +291,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D7508661812C6B600C62D34 /* SecondViewController.m in Sources */,
-				5D0D63B018B8D1F60058672D /* UIImage+ImageEffects.m in Sources */,
 				5D75085D1812C6B600C62D34 /* AppDelegate.m in Sources */,
 				5D7508631812C6B600C62D34 /* FirstViewController.m in Sources */,
+				5D0D63B918BD5D030058672D /* LoginView.m in Sources */,
 				5D7508591812C6B600C62D34 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
