@@ -27,6 +27,8 @@
     self.nameLabel.font = [UIFont fontWithName:@"Gotham-Light" size:17];
     loginView.frame = CGRectOffset(loginView.frame, 5, -100);
     
+    
+    
 }
 - (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView {
     self.profilePictureView.profileID = nil;

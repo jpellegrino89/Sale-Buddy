@@ -182,12 +182,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Et6-Lx-4Ll" customClass="FBLoginView">
-                                <rect key="frame" x="74" y="360" width="172" height="57"/>
+                                <rect key="frame" x="50" y="415" width="220" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYq-vk-xsD">
-                                <rect key="frame" x="20" y="319" width="280" height="21"/>
+                                <rect key="frame" x="20" y="282" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -196,8 +196,15 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kwd-Dl-84D" customClass="FBProfilePictureView">
                                 <rect key="frame" x="98" y="150" width="124" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoA-pc-Vek">
+                                <rect key="frame" x="20" y="323" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -205,6 +212,7 @@
                         <outlet property="nameLabel" destination="hYq-vk-xsD" id="ut0-Cx-c9X"/>
                         <outlet property="profilePictureView" destination="Kwd-Dl-84D" id="E84-Og-kcV"/>
                         <outlet property="saleBuddy" destination="Sq7-jw-9gB" id="Gdy-zg-l1n"/>
+                        <outlet property="welcomeLabel" destination="hoA-pc-Vek" id="IZi-V1-gdK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zOs-VN-S8w" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -230,10 +238,10 @@
             </objects>
             <point key="canvasLocation" x="132" y="180"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - firstview-->
         <scene sceneID="dLE-W6-fZ0">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VZG-Q0-8IE" sceneMemberID="viewController">
+                <navigationController title="firstview" automaticallyAdjustsScrollViewInsets="NO" id="VZG-Q0-8IE" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="6B5-f7-Yws"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8A7-mf-q5O">

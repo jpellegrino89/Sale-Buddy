@@ -22,6 +22,7 @@
 @property (strong, nonatomic) IBOutlet FBProfilePictureView *profilePictureView;
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *statusLabel;
+@property (strong, nonatomic) IBOutlet UILabel *welcomeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *saleBuddy;
 @property (strong, nonatomic) IBOutlet UIView *backgroundView;
 

@@ -29,21 +29,43 @@
                             user:(id<FBGraphUser>)user {
     self.profilePictureView.profileID = user.id;
     self.nameLabel.text = [NSString stringWithFormat:@"Welcome, %@",user.name];
-    self.nameLabel.font = [UIFont fontWithName:@"Gotham-Light" size:17];
-    loginView.frame = CGRectOffset(loginView.frame, 5, -100);
+    self.nameLabel.font = [UIFont fontWithName:@"Gotham-Book" size:17];
+    //loginView.frame = CGRectOffset(loginView.frame, 5, -100);
+    self.welcomeLabel.alpha=0;
+    self.profilePictureView.alpha=1;
+  
+    [FBLoginView beginAnimations:nil context:NULL];
+    //loginView.frame = CGRectOffset(loginView.frame, 5, 5);
+
+    [FBLoginView setAnimationDuration:0.5];
+    [FBLoginView commitAnimations];
     
+    
+    NSString * storyboardName = @"Main";
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
+    UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"FirstViewController"];
+    [self presentViewController:vc animated:YES completion:nil];
+    
+    
+    
+
 }
 - (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView {
     self.profilePictureView.profileID = nil;
+    self.profilePictureView.alpha=0;
     self.nameLabel.text = @"";
     self.statusLabel.text= @"You're not logged in!";
+    self.welcomeLabel.text=@"Welcome";
+    self.welcomeLabel.alpha=1;
+    
 }
 
 
 
 - (void)viewDidLoad
 {
-   
+    _welcomeLabel.font=[UIFont fontWithName:@"Gotham-Light" size:50];
+
     _saleBuddy.font=[UIFont fontWithName:@"Gotham-Book" size:40];
     //_saleBuddy.shadowColor=[UIColor blackColor];
     //_saleBuddy.shadowOffset=CGSizeMake(1,1);
@@ -60,10 +82,11 @@
     
     FBLoginView *loginView = [[FBLoginView alloc] initWithReadPermissions:@[@"basic_info", @"email", @"user_likes"]];
     loginView.delegate = self;
+    loginView.frame=CGRectMake(0, 0, 0, 0);
     
     [self.view addSubview:loginView];
     
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"wallpaper.png"]];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"wallpaper1.jpg"]];
 
     [super viewDidLoad];
     
