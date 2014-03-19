@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Social/Social.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import <iAd/iAd.h>
 
 
 @interface FirstViewController : UIViewController<FBLoginViewDelegate>{
@@ -32,6 +33,9 @@
 @property (strong, nonatomic) IBOutlet FBProfilePictureView *profilePictureView;
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *statusLabel;
+@property (nonatomic, assign) BOOL bannerVisible;
+@property (nonatomic, retain) IBOutlet ADBannerView *banner;
+
 
 
 

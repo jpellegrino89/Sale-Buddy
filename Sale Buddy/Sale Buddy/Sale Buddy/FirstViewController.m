@@ -379,6 +379,51 @@
         // Present the share dialog
     } else {
         // Present the feed dialog
+        // Present share dialog
+        [FBDialogs presentShareDialogWithLink:params.link
+                                         name:params.name
+                                      caption:params.caption
+                                  description:params.description
+                                      picture:params.picture
+                                  clientState:nil
+                                      handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
+                                          if(error) {
+                                              // An error occurred, we need to handle the error
+                                              // See: https://developers.facebook.com/docs/ios/errors
+                                              NSLog([NSString stringWithFormat:@"Error publishing story: %@", error.description]);
+                                          } else {
+                                              // Success
+                                              NSLog(@"result %@", results);
+                                          }
+                                      }];
+
     }
 }
+
+-(void)bannerViewDidLoad:(ADBannerView *)abanner{
+    if(self.bannerVisible){
+        [UIView beginAnimations:@"animatedAdBannerOn" context:NULL];
+        _banner.frame =CGRectOffset(_banner.frame, 0, 50.0);
+        [UIView commitAnimations];
+        self.bannerVisible=YES;
+        _banner.frame =CGRectZero;
+        
+        
+        
+        
+        
+    }
+    
+}
+
+-(void)bannerView:(ADBannerView *)aBanner didFailToReceiveAdWithError:(NSError *)error{
+    if(self.bannerVisible){
+        [UIView beginAnimations:@"animatedAdBannerOff" context:NULL];
+        _banner.frame =CGRectOffset(_banner.frame, 0, -320.0);
+        [UIView commitAnimations];
+        self.bannerVisible=NO;
+    }
+}
+
+
 @end
