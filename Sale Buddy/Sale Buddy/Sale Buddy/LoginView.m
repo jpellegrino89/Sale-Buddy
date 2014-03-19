@@ -39,13 +39,13 @@
 
     [FBLoginView setAnimationDuration:0.5];
     [FBLoginView commitAnimations];
-    
-    
+    [self performSegueWithIdentifier:@"FBMove" sender:self];
+    /*
     NSString * storyboardName = @"Main";
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
     UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"FirstViewController"];
     [self presentViewController:vc animated:YES completion:nil];
-    
+    */
     
     
 

@@ -5,27 +5,27 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>4DF6B51D-E4BB-4A98-B53E-6F8532BFB937</string>
+	<string>11286C30-AAD4-494A-A667-3F2F67E08D2A</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Sale Buddy</string>
 	<key>IDESourceControlProjectPath</key>
 	<string>Sale Buddy.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>F4222DC9-6827-4EC0-BE58-2AB353F360D2</key>
+		<key>4726053E-B9F6-4FBB-9C35-6D3C8FFA33EB</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>F4222DC9-6827-4EC0-BE58-2AB353F360D2</string>
+	<string>4726053E-B9F6-4FBB-9C35-6D3C8FFA33EB</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>F4222DC9-6827-4EC0-BE58-2AB353F360D2</string>
+			<string>4726053E-B9F6-4FBB-9C35-6D3C8FFA33EB</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Sale Buddy</string>
 		</dict>
