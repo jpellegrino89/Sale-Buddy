@@ -24,6 +24,20 @@
     IBOutlet UITextField *originalPrice;
     IBOutlet UITextField *percentageOff;
     IBOutlet UIView *login;
+    UISwitch *further;
+    IBOutlet UILabel *ammountDeducted;
+    IBOutlet UITextField *additionalDiscount;
+    IBOutlet UILabel *furtherDiscountLabel;
+    IBOutlet UIView *profileTop;
+
+
+    
+    NSInteger original,sale,tempCalc,result;
+    int originalValue;
+    float p,r,o,sP,thirtyPercent,percentageValue,thirtyo,thirtyp,thirtyr;
+    UIAlertView *furtherDiscount;
+    UIAlertView *discountedResult;
+
     
 }
 
@@ -35,6 +49,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *statusLabel;
 @property (nonatomic, assign) BOOL bannerVisible;
 @property (nonatomic, retain) IBOutlet ADBannerView *banner;
+@property (nonatomic, retain) IBOutlet UISwitch *further;
+@property (nonatomic, retain) IBOutlet UILabel *finalPrice;
+
 
 
 

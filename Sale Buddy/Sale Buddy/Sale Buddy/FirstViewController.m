@@ -20,6 +20,7 @@
 @end
 
 @implementation FirstViewController
+@synthesize finalPrice;
 
 // This method will be called when the user information has been fetched
 - (void)loginViewFetchedUserInfo:(FBLoginView *)loginView
@@ -28,13 +29,36 @@
     self.nameLabel.text = user.name;
     self.nameLabel.font = [UIFont fontWithName:@"Gotham-Light" size:17];
     loginView.frame = CGRectOffset(loginView.frame, 5, -100);
+    [self.view sendSubviewToBack:loginView];
     
     
     
 }
+- (IBAction)place:(id)sender {
+    // Initialize the place picker
+    FBPlacePickerViewController *placePickerController = [[FBPlacePickerViewController alloc] init];
+    // Set the place picker title
+    placePickerController.title = @"Pick Place";
+    // Hard code current location to Menlo Park, CA
+    placePickerController.locationCoordinate = CLLocationCoordinate2DMake(37.453827, -122.182187);
+    // Configure the additional search parameters
+    placePickerController.radiusInMeters = 1000;
+    placePickerController.resultsLimit = 50;
+    placePickerController.searchText = @"restaurant";
+    
+    // TODO: Set up the place picker delegate to handle
+    // picker callbacks, ex: Done/Cancel button
+    
+    // Load the place data
+    [placePickerController loadData];
+    // Show the place picker modally
+    [placePickerController presentModallyFromViewController:self animated:YES handler:nil];
+}
+
 - (IBAction)FBLogout:(id)sender {
      [FBSession.activeSession closeAndClearTokenInformation];
 }
+
 
 
 - (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView {
@@ -53,6 +77,8 @@
 - (void)viewDidLoad
 
 {
+    profileTop.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"profile"]];
+    
    // self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
 
    login.backgroundColor = [UIColor clearColor];
@@ -71,16 +97,16 @@
     loginView.delegate = self;
 
     originalPriceLabel.text=@"Original Price";
-    originalPriceLabel.font = [UIFont fontWithName:@"Gotham-Light" size:17];
+   // originalPriceLabel.font = [UIFont fontWithName:@"Gotham-Light" size:17];
     
     percentageOffLabel.text=@"Percentage Off";
-    percentageOffLabel.font = [UIFont fontWithName:@"Gotham-Light" size:17];
+  //  percentageOffLabel.font = [UIFont fontWithName:@"Gotham-Light" size:17];
     
     
-    finalPrice.font = [UIFont fontWithName:@"Gotham-Medium" size:30];
+   // finalPrice.font = [UIFont fontWithName:@"Gotham-Medium" size:30];
 
-    originalPrice.font=[UIFont fontWithName:@"Gotham-Book" size:23];
-    percentageOff.font=[UIFont fontWithName:@"Gotham-Book" size:23];
+   // originalPrice.font=[UIFont fontWithName:@"Gotham-Book" size:23];
+   // percentageOff.font=[UIFont fontWithName:@"Gotham-Book" size:23];
     
     originalPrice.keyboardType=UIKeyboardTypeDecimalPad;
     percentageOff.keyboardType=UIKeyboardTypeDecimalPad;
@@ -134,6 +160,17 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
+/*
+-(IBAction) switchValueChanged{
+    if (further.on) {[self thirtyDiscount:nil];}
+    else { [self calculatePrice];
+        [furtherDiscountLabel setText: [NSString stringWithFormat:@""]];
+        
+        
+        
+    }
+}
+ */
 
 // Handle possible errors that can occur during login
 - (void)loginView:(FBLoginView *)loginView handleError:(NSError *)error {
@@ -177,6 +214,79 @@
                           otherButtonTitles:nil] show];
     }
 }
+
+
+
+- (IBAction)calculatePrice:(id)sender
+
+{
+    further.on=NO;
+    
+    
+    
+    //Caculate original * percentage off
+    o=[[originalPrice text] floatValue];
+    p=[[percentageOff text] floatValue];
+    r=o * (p/100);
+    
+    [ammountDeducted setText:[NSString stringWithFormat:@"%.2f", o * (p/100)]];
+    [finalPrice setText: [NSString stringWithFormat:@"$""%.2f", o-r]];
+    [percentageOff resignFirstResponder];
+    [originalPrice resignFirstResponder];
+    [additionalDiscount resignFirstResponder];
+    
+    if(r==0){
+        [finalPrice setText: @"Free!"];
+    }
+    if(o==0&&p==0){
+        
+    //CustomAlertView *someError = [[CustomAlertView alloc] initWithTitle: @"Calculation Error" message: @"You must specify the Original Price and the Percentage Off" delegate: self cancelButtonTitle: @"Ok" otherButtonTitles: nil];
+      //  [someError show];
+         
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"title" message:@"\n\n\n" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+        UILabel *txtField = [[UILabel alloc] initWithFrame:CGRectMake(12.0, 25.0, 260.0, 95.0)];
+        [txtField setFont:[UIFont fontWithName:@"Gotham-Book" size:(18.0)]];
+        txtField.numberOfLines = 3;
+        txtField.textColor = [UIColor whiteColor];
+        txtField.text = @"Look at me, I am a Red and Bold Label.";
+        txtField.backgroundColor = [UIColor clearColor];
+        [alertView addSubview:txtField];
+        //[alertView show];
+    }
+    else if(o==0){
+        UIAlertView *someError = [[UIAlertView alloc] initWithTitle: @"Calculation Error" message: @"You must specify the Original Price" delegate: self cancelButtonTitle: @"Ok" otherButtonTitles: nil];
+        
+        [someError show];
+        
+    }
+    else if(p==0){
+        UIAlertView *someError = [[UIAlertView alloc] initWithTitle: @"Calculation Error" message: @"You must specify the Percentage off" delegate: self cancelButtonTitle: @"Ok" otherButtonTitles: nil];
+        
+        [someError show];
+        
+    }
+    //Calculate Price Custom Button
+       // [calculateButton addTarget:self action:@selector(calculatePrice) forControlEvents:UIControlEventTouchUpInside];
+    // add to a view
+   // [calculatePrice2 removeFromSuperview];
+    //[self.view addSubview:calculatePrice];
+    
+    //apply Button
+    UIButton *apply=[UIButton buttonWithType:UIButtonTypeRoundedRect];
+    apply.frame = CGRectMake(240, 300, 65, 30);
+    [apply setTitle:@"Apply" forState:UIControlStateNormal];
+    [apply addTarget:self action:@selector(thirtyDiscount:) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    //[self.view addSubview:apply];
+    //[self.view addSubview:additionalDiscount];
+    
+}
+
+
+
+
 
 
 - (void)didReceiveMemoryWarning
@@ -355,7 +465,7 @@
     params.name = @"Check out this Deal I found!";
     params.caption = @"Caption";
     params.picture = [NSURL URLWithString:@"http://i.imgur.com/g3Qc1HN.png"];
-    params.description = @"Description";
+    params.description = [NSString stringWithFormat:@"Check out this great deal I found! %@",finalPrice.text];
     
     // If the Facebook app is installed and we can present the share dialog
     if ([FBDialogs canPresentShareDialogWithParams:params]) {
@@ -378,26 +488,59 @@
                                       }];
         // Present the share dialog
     } else {
+        
         // Present the feed dialog
-        // Present share dialog
-        [FBDialogs presentShareDialogWithLink:params.link
-                                         name:params.name
-                                      caption:params.caption
-                                  description:params.description
-                                      picture:params.picture
-                                  clientState:nil
-                                      handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
-                                          if(error) {
-                                              // An error occurred, we need to handle the error
-                                              // See: https://developers.facebook.com/docs/ios/errors
-                                              NSLog([NSString stringWithFormat:@"Error publishing story: %@", error.description]);
-                                          } else {
-                                              // Success
-                                              NSLog(@"result %@", results);
-                                          }
-                                      }];
-
+        // Put together the dialog parameters
+        NSString *string1=[NSString stringWithFormat:@"Check out this great deal I found! %@",finalPrice.text];
+        NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                       @"Sharing Tutorial", @"name",
+                                       @"Build great social apps and get more installs.", @"caption",
+                                       @"Allow your users to share stories on Facebook from your app using the iOS SDK.", @"description",
+                                       @"https://developers.facebook.com/docs/ios/share/", @"link",
+                                       @"http://i.imgur.com/g3Qc1HN.png", @"place",
+                                       nil];
+        
+        // Show the feed dialog
+        [FBWebDialogs presentFeedDialogModallyWithSession:nil
+                                               parameters:params
+                                                  handler:^(FBWebDialogResult result, NSURL *resultURL, NSError *error) {
+                                                      if (error) {
+                                                          // An error occurred, we need to handle the error
+                                                          // See: https://developers.facebook.com/docs/ios/errors
+                                                          NSLog([NSString stringWithFormat:@"Error publishing story: %@", error.description]);
+                                                      } else {
+                                                          if (result == FBWebDialogResultDialogNotCompleted) {
+                                                              // User cancelled.
+                                                              NSLog(@"User cancelled.");
+                                                          } else {
+                                                              // Handle the publish feed callback
+                                                              NSDictionary *urlParams = [self parseURLParams:[resultURL query]];
+                                                              
+                                                              if (![urlParams valueForKey:@"post_id"]) {
+                                                                  // User cancelled.
+                                                                  NSLog(@"User cancelled.");
+                                                                  
+                                                              } else {
+                                                                  // User clicked the Share button
+                                                                  NSString *result = [NSString stringWithFormat: @"Posted story, id: %@", [urlParams valueForKey:@"post_id"]];
+                                                                  NSLog(@"result %@", result);
+                                                              }
+                                                          }
+                                                      }
+                                                  }];    }
+    
+}
+// A function for parsing URL parameters returned by the Feed Dialog.
+- (NSDictionary*)parseURLParams:(NSString *)query {
+    NSArray *pairs = [query componentsSeparatedByString:@"&"];
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    for (NSString *pair in pairs) {
+        NSArray *kv = [pair componentsSeparatedByString:@"="];
+        NSString *val =
+        [kv[1] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        params[kv[0]] = val;
     }
+    return params;
 }
 
 -(void)bannerViewDidLoad:(ADBannerView *)abanner{
@@ -414,6 +557,22 @@
         
     }
     
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    
+    BOOL urlWasHandled = [FBAppCall handleOpenURL:url
+                                sourceApplication:sourceApplication
+                                  fallbackHandler:^(FBAppCall *call) {
+                                      NSLog(@"Unhandled deep link: %@", url);
+                                      // Here goes the code to handle the links
+                                      // Use the links to show a relevant view of your app to the user
+                                  }];
+    
+    return urlWasHandled;
 }
 
 -(void)bannerView:(ADBannerView *)aBanner didFailToReceiveAdWithError:(NSError *)error{

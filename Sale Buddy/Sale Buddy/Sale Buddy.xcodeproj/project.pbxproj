@@ -43,6 +43,8 @@
 		5D82C6AB18D91FAA004DD889 /* Gotham-Ultra.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5D82C69B18D91FAA004DD889 /* Gotham-Ultra.otf */; };
 		5D82C6AC18D91FAA004DD889 /* Gotham-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5D82C69C18D91FAA004DD889 /* Gotham-Medium.otf */; };
 		5D82C6AD18D91FAA004DD889 /* Gotham-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5D82C69D18D91FAA004DD889 /* Gotham-Black.otf */; };
+		5DA8C62E18DF125B004B491F /* background2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DA8C62D18DF125B004B491F /* background2@2x.png */; };
+		5DA8C63418E6F8F9004B491F /* Profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DA8C63318E6F8F9004B491F /* Profile@2x.png */; };
 		5DDEA21818A7CA3A00FA3892 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D75085E1812C6B600C62D34 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +103,8 @@
 		5D82C69B18D91FAA004DD889 /* Gotham-Ultra.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Ultra.otf"; sourceTree = "<group>"; };
 		5D82C69C18D91FAA004DD889 /* Gotham-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Medium.otf"; sourceTree = "<group>"; };
 		5D82C69D18D91FAA004DD889 /* Gotham-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Black.otf"; sourceTree = "<group>"; };
+		5DA8C62D18DF125B004B491F /* background2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background2@2x.png"; sourceTree = "<group>"; };
+		5DA8C63318E6F8F9004B491F /* Profile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Profile@2x.png"; path = "../../../../Desktop/Profile@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +175,7 @@
 				5D75085E1812C6B600C62D34 /* Main.storyboard */,
 				5D0D63B718BD5D030058672D /* LoginView.h */,
 				5D0D63B818BD5D030058672D /* LoginView.m */,
+				5DA8C62D18DF125B004B491F /* background2@2x.png */,
 				5D7508611812C6B600C62D34 /* FirstViewController.h */,
 				5D7508621812C6B600C62D34 /* FirstViewController.m */,
 				5D7508641812C6B600C62D34 /* SecondViewController.h */,
@@ -184,6 +189,7 @@
 		5D7508531812C6B600C62D34 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5DA8C63318E6F8F9004B491F /* Profile@2x.png */,
 				5D82C68E18D91FAA004DD889 /* Gotham-BookItalic.otf */,
 				5D82C68F18D91FAA004DD889 /* Gotham-ThinItalic.otf */,
 				5D82C69018D91FAA004DD889 /* Gotham-MediumItalic.otf */,
@@ -314,6 +320,7 @@
 				5D82C6A118D91FAA004DD889 /* Gotham-BlackItalic.otf in Resources */,
 				5D82C6A318D91FAA004DD889 /* Gotham-UltraItalic.otf in Resources */,
 				5D82C6A218D91FAA004DD889 /* Gotham-XLightItalic.otf in Resources */,
+				5DA8C63418E6F8F9004B491F /* Profile@2x.png in Resources */,
 				5D82C6A918D91FAA004DD889 /* Gotham-Thin.otf in Resources */,
 				5D82C6A718D91FAA004DD889 /* Gotham-Book.otf in Resources */,
 				5DDEA21818A7CA3A00FA3892 /* Main.storyboard in Resources */,
@@ -322,6 +329,7 @@
 				5D82C6A018D91FAA004DD889 /* Gotham-MediumItalic.otf in Resources */,
 				5D7508571812C6B600C62D34 /* InfoPlist.strings in Resources */,
 				5D82C6A818D91FAA004DD889 /* Gotham-Light.otf in Resources */,
+				5DA8C62E18DF125B004B491F /* background2@2x.png in Resources */,
 				5D82C6A418D91FAA004DD889 /* Gotham-LightItalic.otf in Resources */,
 				5D82C6AC18D91FAA004DD889 /* Gotham-Medium.otf in Resources */,
 				5D82C69E18D91FAA004DD889 /* Gotham-BookItalic.otf in Resources */,

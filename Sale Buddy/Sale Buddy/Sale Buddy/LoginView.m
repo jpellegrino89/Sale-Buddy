@@ -64,9 +64,12 @@
 
 - (void)viewDidLoad
 {
+    [[FBProfilePictureView layer] setCornerRadius:10];
+    
     _welcomeLabel.font=[UIFont fontWithName:@"Gotham-Light" size:50];
 
-    _saleBuddy.font=[UIFont fontWithName:@"Gotham-Book" size:40];
+    //_saleBuddy.font=[UIFont fontWithName:@"Gotham-Book" size:40];
+    _saleBuddy.font=[UIFont fontWithName:@"Avenir" size:40];
     //_saleBuddy.shadowColor=[UIColor blackColor];
     //_saleBuddy.shadowOffset=CGSizeMake(1,1);
     _saleBuddy.layer.shadowRadius = .9f;
