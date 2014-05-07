@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="i81-l6-KYn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="i81-l6-KYn">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -16,16 +16,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="goM-Ng-psN">
+                                <rect key="frame" x="-6" y="-11" width="334" height="610"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MnS-VG-yXT">
                                 <rect key="frame" x="254" y="206" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="switchValueChanged" destination="CZ4-MO-1fc" eventType="valueChanged" id="CVN-hb-KR4"/>
+                                </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5x-JC-fpQ">
-                                <rect key="frame" x="102" y="266" width="108" height="35"/>
+                                <rect key="frame" x="106" y="266" width="108" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="19"/>
                                 <state key="normal" title="Calculate">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="calculatePrice:" destination="CZ4-MO-1fc" eventType="touchUpInside" id="b3J-1d-5wl"/>
@@ -34,14 +41,15 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="additional discounts" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="DR0-In-rSA">
                                 <rect key="frame" x="13" y="207" width="164" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gr1-UV-6bj">
-                                <rect key="frame" x="35" y="420" width="243" height="55"/>
+                                <rect key="frame" x="39" y="387" width="243" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="44"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Il4-Ik-y5g">
@@ -49,6 +57,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
                                 <state key="normal" title="Tweet">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -60,6 +69,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
                                 <state key="normal" title="Post">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -70,36 +80,44 @@
                                 <rect key="frame" x="20" y="139" width="164" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="chY-Zf-Z5L">
                                 <rect key="frame" x="163" y="97" width="145" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
-                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="23"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="%" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="uO5-7W-SbX">
                                 <rect key="frame" x="198" y="139" width="75" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="23"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="fbName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVi-Gq-CjS">
-                                <rect key="frame" x="93" y="31" width="214" height="34"/>
+                                <rect key="frame" x="76" y="38" width="214" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6MD-xe-AWA" customClass="FBLoginView">
+                                <rect key="frame" x="87" y="32" width="220" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cE-9D-Gpn">
                                 <rect key="frame" x="20" y="99" width="127" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXv-mE-XTU" userLabel="Logout">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXv-mE-XTU" userLabel="Logout">
                                 <rect key="frame" x="13" y="19" width="63" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
@@ -109,22 +127,14 @@
                                     <action selector="FBLogout:" destination="CZ4-MO-1fc" eventType="touchUpInside" id="FrC-jX-zlV"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2A1-UV-Kf8" customClass="FBProfilePictureView">
-                                <rect key="frame" x="20" y="28" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="B640EB59-89FA-4D56-8BFB-AD75DFA8816B" translatesAutoresizingMaskIntoConstraints="NO" id="Yan-Y9-Kjg">
-                                <rect key="frame" x="20" y="28" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RdO-A3-cAo">
-                                <rect key="frame" x="135" y="338" width="42" height="21"/>
+                                <rect key="frame" x="76" y="342" width="179" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9iq-eL-ENX">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9iq-eL-ENX">
                                 <rect key="frame" x="20" y="382" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button">
@@ -153,6 +163,7 @@
                         <outlet property="additionalDiscount" destination="DR0-In-rSA" id="PjQ-fY-vDa"/>
                         <outlet property="ammountDeducted" destination="RdO-A3-cAo" id="CCj-Dh-Duu"/>
                         <outlet property="calculateButton" destination="X5x-JC-fpQ" id="Hde-M3-Yte"/>
+                        <outlet property="fbview" destination="6MD-xe-AWA" id="PkR-YE-g1u"/>
                         <outlet property="finalPrice" destination="gr1-UV-6bj" id="97p-Ct-nDH"/>
                         <outlet property="further" destination="MnS-VG-yXT" id="Z2A-4C-OEu"/>
                         <outlet property="furtherDiscountLabel" destination="RdO-A3-cAo" id="8Mt-rG-zC7"/>
@@ -163,6 +174,7 @@
                         <outlet property="percentageOffLabel" destination="9ZA-BO-3PI" id="ObY-NG-5yO"/>
                         <outlet property="profilePictureView" destination="JyE-oQ-PW9" id="L4K-Hb-A5G"/>
                         <outlet property="statusLabel" destination="gr1-UV-6bj" id="gHq-JJ-211"/>
+                        <outlet property="topImage" destination="goM-Ng-psN" id="OFU-8o-00r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qh2-T1-AhA" sceneMemberID="firstResponder"/>
@@ -232,7 +244,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoA-pc-Vek">
-                                <rect key="frame" x="20" y="323" width="280" height="21"/>
+                                <rect key="frame" x="20" y="288" width="280" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -241,11 +253,11 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjD-b3-ZEK">
                                 <rect key="frame" x="224" y="490" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="CZ4-MO-1fc" kind="modal" identifier="FBMove" animates="NO" id="9Wf-QR-g4U"/>
+                                    <segue destination="CZ4-MO-1fc" kind="modal" identifier="FBMove" modalTransitionStyle="crossDissolve" id="9Wf-QR-g4U"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -302,243 +314,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="B640EB59-89FA-4D56-8BFB-AD75DFA8816B" width="50" height="50">
-            <mutableData key="keyedArchiveRepresentation">
-YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
-GxwgISksLzU4VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
-DBIAwAAAgAKACtISCRMVWk5TLm9iamVjdHOhFIADgAnSEgkXGqIYGYAEgAWACBAA0h0JHh9fEBROU1RJ
-RkZSZXByZXNlbnRhdGlvboAGgAdPETQeTU0AKgAAJxj/////////////////////////////////////
-///////////////////////////////////////////////////////////8/PzmIycqXiMnKpIjJyq5
-Iycq2SMnKu0jJyr4Iycq+SMnKu0jJyrZIycquSMnKpIjJype/Pz85v//////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////z8/OW5urvA
-TVFT3Dg7PusjJyqpIycqcSMnKkkjJyonIycqEiMnKgcjJyoHIycqEiMnKicjJypIIycqcSMnKqk4Oz7r
-TVFT3Lm6u8D8/Pzl////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-//////f399mAgoTGMzc67SMnKpMjJyo5IycqASMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgEjJyo1IycqjjM3Ou2AgoTG9/f32f//////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-//////////////////////39/euNj5HDOT1A6CMnKnMjJyoM////AP///wD///8AIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA////AP///wD///8AIycqDCMnKnM5PUDo
-jY+Rw/39/ev/////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////g4eHHNjo87SMnKo4jJyoM////AP///wD///8A
-////AP///wAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgD///8A
-////AP///wD///8A////ACMnKgwjJyqONjo87eDh4cf/////////////////////////////////////
-///////////////////////////////////////////////////////////////5mZucwUtOUN0jJyoy
-////AP///wD///8A////AP///wD///8A////ACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqAP///wD///8A////AP///wD///8A////AP///wAjJyoyS05Q3ZmbnMH////5
-////////////////////////////////////////////////////////////////////////////////
-/v7+9G9ydMwjJyqyIycqDv///wD///8A////AP///wD///8A////AP///wD///8AIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA////AP///wD///8A////AP///wD///8A
-////AP///wAjJyoNIycqsm9ydMz+/v70////////////////////////////////////////////////
-//////////////////////////VeYWPTIycqnCMnKgP///8A////AP///wD///8A////AP///wD///8A
-////AP///wAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgD///8A
-////AP///wD///8A////AP///wD///8A////AP///wAjJyoDIycqnF5hY9P////1////////////////
-///////////////////////////////////////////////5amxuziMnKp0jJyoB////AP///wD///8A
-////AP///wD///8A////AP///wD///8A////ACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wAjJyoB
-IycqnWpsbs3////5/////////////////////////////////////////////////////5mbnMEjJyqx
-IycqA////wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA////AP///wD///8A////AP///wD///8A
-////AP///wD///8A////AP///wAjJyoDIycqsZmbnMH/////////////////////////////////////
-///////////f4ODGREdK4iMnKg////8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
-////AP///wAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgD///8A
-////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wAjJyoPREdK4t3e3sX/////
-/////////////////////////////////Pz86DY6PO0jJyoz////AP///wD///8A////AP///wD///8A
-////AP///wD///8A////AP///wD///8A////ACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
-////AP///wAjJyozNjo87fz8/Oj///////////////////////////////+HiYvFIycqjf///wD///8A
-////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA////AP///wD///8A////AP///wD///8A
-////AP///wD///8A////AP///wD///8A////AP///wAjJyqNh4mLxf//////////////////////////
-9fX11zk9QOgjJyoN////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
-////AP///wAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgD///8A
-////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////ACMnKgw8QELo
-9fX11/////////////////////94e33IIycqdP///wD///8A////AP///wD///8A////AP///wD///8A
-////AP///wD///8A////AP///wD///8A////ACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
-////AP///wD///8A////ACMnKm94e33I/////////////////Pz85TY6PO0jJyoM////AP///wD///8A
-////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA////AP///wD///8A////AP///wD///8A
-////AP///wD///8A////AP///wD///8A////AP///wD///8AIycqCTY6POz8/Pzj//////////+8vb7A
-IycqkP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
-////AP///wAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgD///8A
-////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
-IycqkLK0tb///////////0tOUNwjJyo1////AP///wD///8A////AP///wD///8A////AP///wD///8A
-////AP///wD///8A////AP///wD///8A////ACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
-////AP///wD///8A////AP///wAjJyo1SEtO3//////8/PzmNjo87CMnKgH///8A////AP///wD///8A
-////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA////AP///wD///8A////AP///wD///8A
-////AP///wD///8A////AP///wD///8A////AP///wD///8A////ACMnKgE4Oz7r+vr64iMnKl8jJyqo
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKqgjJypjIycqkyMnKnAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqcCMnKpMjJyq5IycqSiMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJypJIycquiMnKtwjJyok
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKiQjJyrcIycq8SMnKg4jJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqDSMnKuwjJyr/IycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycq+SMnKv8jJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgYjJyr5Iycq8SMnKg0jJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqEyMnKu0jJyrcIycqJCMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyokIycq3CMnKrkjJypK
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKkkjJyq6IycqkyMnKnAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqcCMnKpMjJypfIycqqCMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyqoIycqY/z8/OY2Ojzs
-IycqAf///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
-////AP///wAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgD///8A
-////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
-IycqATg7Puv6+vri/////0tOUNwjJyo1////AP///wD///8A////AP///wD///8A////AP///wD///8A
-////AP///wD///8A////AP///wD///8A////ACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
-////AP///wD///8A////AP///wAjJyo0RkpM3///////////vL2+wCMnKpD///8A////AP///wD///8A
-////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA////AP///wD///8A////AP///wD///8A
-////AP///wD///8A////AP///wD///8A////AP///wD///8A////ACMnKpCytLW////////////8/Pzj
-Njo87CMnKgz///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
-////AP///wAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgD///8A
-////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wAjJyoJ
-Njo87Pz8/OP///////////////94e33IIycqdP///wD///8A////AP///wD///8A////AP///wD///8A
-////AP///wD///8A////AP///wD///8A////ACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
-////AP///wD///8A////ACMnKm54e33I//////////////////////X19dc5PUDoIycqDP///wD///8A
-////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA////AP///wD///8A////AP///wD///8A
-////AP///wD///8A////AP///wD///8A////AP///wAjJyoMPEBC6PX19df/////////////////////
-/////4eJi8UjJyqN////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
-////AP///wAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgD///8A
-////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////ACMnKoyHiYvF
-/////////////////////////////////Pz86DY6PO0jJyox////AP///wD///8A////AP///wD///8A
-////AP///wD///8A////AP///wD///8A////ACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
-////AP///wAjJyoxNjo87fz8/Oj/////////////////////////////////////3d7exUtOUN0jJyoN
-////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA////AP///wD///8A////AP///wD///8A
-////AP///wD///8A////AP///wD///8AIycqDUtOUNzd3t7F////////////////////////////////
-////////////////mZucwSMnKrEjJyoD////AP///wD///8A////AP///wD///8A////AP///wD///8A
-////AP///wAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgD///8A
-////AP///wD///8A////AP///wD///8A////AP///wD///8A////ACMnKgMjJyqxl5mbwf//////////
-///////////////////////////////////////////////5amxuziMnKpsjJyoB////AP///wD///8A
-////AP///wD///8A////AP///wD///8A////ACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wAjJyoB
-Iycqm2psbs7////5///////////////////////////////////////////////////////////////1
-XmFj0yMnKpwjJyoD////AP///wD///8A////AP///wD///8A////AP///wD///8AIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA////AP///wD///8A////AP///wD///8A
-////AP///wD///8AIycqAyMnKpxeYWPT////9f//////////////////////////////////////////
-///////////////////////////+/v70b3J0zCMnKrIjJyoN////AP///wD///8A////AP///wD///8A
-////AP///wAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgD///8A
-////AP///wD///8A////AP///wD///8A////ACMnKg0jJyqyb3J0zP7+/vT/////////////////////
-///////////////////////////////////////////////////////////////5l5mbwUtOUN0jJyoy
-////AP///wD///8A////AP///wD///8A////ACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqAP///wD///8A////AP///wD///8A////AP///wAjJyoyS05Q3ZeZm8H////5
-////////////////////////////////////////////////////////////////////////////////
-////////////////4OHhxzY6PO0jJyqMIycqDP///wD///8A////AP///wD///8AIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA////AP///wD///8A////AP///wAjJyoM
-IycqjDY6PO3f4ODG////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////f3964yOkMQ5PUDoIycqciMnKgz///8A
-////AP///wAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgD///8A
-////AP///wAjJyoMIycqcjk9QOiMjpDE/f396///////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-//////b29tiAgoTGMzc67SMnKpMjJyo5IycqASMnKgAjJyoAIycqACMnKgAjJyoAIycqACMnKgAjJyoA
-IycqACMnKgAjJyoAIycqACMnKgEjJyo0IycqjjM3Ou2AgoTG9vb22P//////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////8/Pzlubq7wEtOUNw4Oz7rIycqqCMnKnAjJypI
-IycqJyMnKhEjJyoFIycqBSMnKhEjJyomIycqSCMnKnAjJyqoODs+60tOUN25urvA/Pz85f//////////
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-//////z8/OUjJypfIycqlCMnKrojJyraIycq7iMnKvojJyr6Iycq7iMnKtojJyq6IycqlCMnKl/8/Pzl
-////////////////////////////////////////////////////////////////////////////////
-////////////////AA4BAAADAAAAAQAyAAABAQADAAAAAQAyAAABAgADAAAABAAAJ8YBAwADAAAAAQAB
-AAABBgADAAAAAQACAAABEQAEAAAAAQAAAAgBEgADAAAAAQABAAABFQADAAAAAQAEAAABFgADAAAAAQAy
-AAABFwAEAAAAAQAAJxABHAADAAAAAQABAAABUgADAAAAAQACAAABUwADAAAABAAAJ86HcwAHAAAMSAAA
-J9YAAAAAAAgACAAIAAgAAQABAAEAAQAADEhMaW5vAhAAAG1udHJSR0IgWFlaIAfOAAIACQAGADEAAGFj
-c3BNU0ZUAAAAAElFQyBzUkdCAAAAAAAAAAAAAAAAAAD21gABAAAAANMtSFAgIAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEWNwcnQAAAFQAAAAM2Rlc2MAAAGEAAAAbHd0
-cHQAAAHwAAAAFGJrcHQAAAIEAAAAFHJYWVoAAAIYAAAAFGdYWVoAAAIsAAAAFGJYWVoAAAJAAAAAFGRt
-bmQAAAJUAAAAcGRtZGQAAALEAAAAiHZ1ZWQAAANMAAAAhnZpZXcAAAPUAAAAJGx1bWkAAAP4AAAAFG1l
-YXMAAAQMAAAAJHRlY2gAAAQwAAAADHJUUkMAAAQ8AAAIDGdUUkMAAAQ8AAAIDGJUUkMAAAQ8AAAIDHRl
-eHQAAAAAQ29weXJpZ2h0IChjKSAxOTk4IEhld2xldHQtUGFja2FyZCBDb21wYW55AABkZXNjAAAAAAAA
-ABJzUkdCIElFQzYxOTY2LTIuMQAAAAAAAAAAAAAAEnNSR0IgSUVDNjE5NjYtMi4xAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABYWVogAAAAAAAA81EAAQAAAAEWzFhZ
-WiAAAAAAAAAAAAAAAAAAAAAAWFlaIAAAAAAAAG+iAAA49QAAA5BYWVogAAAAAAAAYpkAALeFAAAY2lhZ
-WiAAAAAAAAAkoAAAD4QAALbPZGVzYwAAAAAAAAAWSUVDIGh0dHA6Ly93d3cuaWVjLmNoAAAAAAAAAAAA
-AAAWSUVDIGh0dHA6Ly93d3cuaWVjLmNoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAGRlc2MAAAAAAAAALklFQyA2MTk2Ni0yLjEgRGVmYXVsdCBSR0IgY29sb3VyIHNwYWNl
-IC0gc1JHQgAAAAAAAAAAAAAALklFQyA2MTk2Ni0yLjEgRGVmYXVsdCBSR0IgY29sb3VyIHNwYWNlIC0g
-c1JHQgAAAAAAAAAAAAAAAAAAAAAAAAAAAABkZXNjAAAAAAAAACxSZWZlcmVuY2UgVmlld2luZyBDb25k
-aXRpb24gaW4gSUVDNjE5NjYtMi4xAAAAAAAAAAAAAAAsUmVmZXJlbmNlIFZpZXdpbmcgQ29uZGl0aW9u
-IGluIElFQzYxOTY2LTIuMQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdmlldwAAAAAAE6T+ABRfLgAQ
-zxQAA+3MAAQTCwADXJ4AAAABWFlaIAAAAAAATAlWAFAAAABXH+dtZWFzAAAAAAAAAAEAAAAAAAAAAAAA
-AAAAAAAAAAACjwAAAAJzaWcgAAAAAENSVCBjdXJ2AAAAAAAABAAAAAAFAAoADwAUABkAHgAjACgALQAy
-ADcAOwBAAEUASgBPAFQAWQBeAGMAaABtAHIAdwB8AIEAhgCLAJAAlQCaAJ8ApACpAK4AsgC3ALwAwQDG
-AMsA0ADVANsA4ADlAOsA8AD2APsBAQEHAQ0BEwEZAR8BJQErATIBOAE+AUUBTAFSAVkBYAFnAW4BdQF8
-AYMBiwGSAZoBoQGpAbEBuQHBAckB0QHZAeEB6QHyAfoCAwIMAhQCHQImAi8COAJBAksCVAJdAmcCcQJ6
-AoQCjgKYAqICrAK2AsECywLVAuAC6wL1AwADCwMWAyEDLQM4A0MDTwNaA2YDcgN+A4oDlgOiA64DugPH
-A9MD4APsA/kEBgQTBCAELQQ7BEgEVQRjBHEEfgSMBJoEqAS2BMQE0wThBPAE/gUNBRwFKwU6BUkFWAVn
-BXcFhgWWBaYFtQXFBdUF5QX2BgYGFgYnBjcGSAZZBmoGewaMBp0GrwbABtEG4wb1BwcHGQcrBz0HTwdh
-B3QHhgeZB6wHvwfSB+UH+AgLCB8IMghGCFoIbgiCCJYIqgi+CNII5wj7CRAJJQk6CU8JZAl5CY8JpAm6
-Cc8J5Qn7ChEKJwo9ClQKagqBCpgKrgrFCtwK8wsLCyILOQtRC2kLgAuYC7ALyAvhC/kMEgwqDEMMXAx1
-DI4MpwzADNkM8w0NDSYNQA1aDXQNjg2pDcMN3g34DhMOLg5JDmQOfw6bDrYO0g7uDwkPJQ9BD14Peg+W
-D7MPzw/sEAkQJhBDEGEQfhCbELkQ1xD1ERMRMRFPEW0RjBGqEckR6BIHEiYSRRJkEoQSoxLDEuMTAxMj
-E0MTYxODE6QTxRPlFAYUJxRJFGoUixStFM4U8BUSFTQVVhV4FZsVvRXgFgMWJhZJFmwWjxayFtYW+hcd
-F0EXZReJF64X0hf3GBsYQBhlGIoYrxjVGPoZIBlFGWsZkRm3Gd0aBBoqGlEadxqeGsUa7BsUGzsbYxuK
-G7Ib2hwCHCocUhx7HKMczBz1HR4dRx1wHZkdwx3sHhYeQB5qHpQevh7pHxMfPh9pH5Qfvx/qIBUgQSBs
-IJggxCDwIRwhSCF1IaEhziH7IiciVSKCIq8i3SMKIzgjZiOUI8Ij8CQfJE0kfCSrJNolCSU4JWgllyXH
-JfcmJyZXJocmtyboJxgnSSd6J6sn3CgNKD8ocSiiKNQpBik4KWspnSnQKgIqNSpoKpsqzysCKzYraSud
-K9EsBSw5LG4soizXLQwtQS12Last4S4WLkwugi63Lu4vJC9aL5Evxy/+MDUwbDCkMNsxEjFKMYIxujHy
-MioyYzKbMtQzDTNGM38zuDPxNCs0ZTSeNNg1EzVNNYc1wjX9Njc2cjauNuk3JDdgN5w31zgUOFA4jDjI
-OQU5Qjl/Obw5+To2OnQ6sjrvOy07azuqO+g8JzxlPKQ84z0iPWE9oT3gPiA+YD6gPuA/IT9hP6I/4kAj
-QGRApkDnQSlBakGsQe5CMEJyQrVC90M6Q31DwEQDREdEikTORRJFVUWaRd5GIkZnRqtG8Ec1R3tHwEgF
-SEtIkUjXSR1JY0mpSfBKN0p9SsRLDEtTS5pL4kwqTHJMuk0CTUpNk03cTiVObk63TwBPSU+TT91QJ1Bx
-ULtRBlFQUZtR5lIxUnxSx1MTU19TqlP2VEJUj1TbVShVdVXCVg9WXFapVvdXRFeSV+BYL1h9WMtZGllp
-WbhaB1pWWqZa9VtFW5Vb5Vw1XIZc1l0nXXhdyV4aXmxevV8PX2Ffs2AFYFdgqmD8YU9homH1YklinGLw
-Y0Njl2PrZEBklGTpZT1lkmXnZj1mkmboZz1nk2fpaD9olmjsaUNpmmnxakhqn2r3a09rp2v/bFdsr20I
-bWBtuW4SbmtuxG8eb3hv0XArcIZw4HE6cZVx8HJLcqZzAXNdc7h0FHRwdMx1KHWFdeF2Pnabdvh3Vnez
-eBF4bnjMeSp5iXnnekZ6pXsEe2N7wnwhfIF84X1BfaF+AX5ifsJ/I3+Ef+WAR4CogQqBa4HNgjCCkoL0
-g1eDuoQdhICE44VHhauGDoZyhteHO4efiASIaYjOiTOJmYn+imSKyoswi5aL/IxjjMqNMY2Yjf+OZo7O
-jzaPnpAGkG6Q1pE/kaiSEZJ6kuOTTZO2lCCUipT0lV+VyZY0lp+XCpd1l+CYTJi4mSSZkJn8mmia1ZtC
-m6+cHJyJnPedZJ3SnkCerp8dn4uf+qBpoNihR6G2oiailqMGo3aj5qRWpMelOKWpphqmi6b9p26n4KhS
-qMSpN6mpqhyqj6sCq3Wr6axcrNCtRK24ri2uoa8Wr4uwALB1sOqxYLHWskuywrM4s660JbSctRO1irYB
-tnm28Ldot+C4WbjRuUq5wro7urW7LrunvCG8m70VvY++Cr6Evv+/er/1wHDA7MFnwePCX8Lbw1jD1MRR
-xM7FS8XIxkbGw8dBx7/IPci8yTrJuco4yrfLNsu2zDXMtc01zbXONs62zzfPuNA50LrRPNG+0j/SwdNE
-08bUSdTL1U7V0dZV1tjXXNfg2GTY6Nls2fHadtr724DcBdyK3RDdlt4c3qLfKd+v4DbgveFE4cziU+Lb
-42Pj6+Rz5PzlhOYN5pbnH+ep6DLovOlG6dDqW+rl63Dr++yG7RHtnO4o7rTvQO/M8Fjw5fFy8f/yjPMZ
-86f0NPTC9VD13vZt9vv3ivgZ+Kj5OPnH+lf65/t3/Af8mP0p/br+S/7c/23//9IiIyQlWiRjbGFzc25h
-bWVYJGNsYXNzZXNfEBBOU0JpdG1hcEltYWdlUmVwoyYnKF8QEE5TQml0bWFwSW1hZ2VSZXBaTlNJbWFn
-ZVJlcFhOU09iamVjdNIiIyorV05TQXJyYXmiKijSIiMtLl5OU011dGFibGVBcnJheaMtKijTMDEJMjM0
-V05TV2hpdGVcTlNDb2xvclNwYWNlRDAgMAAQA4AL0iIjNjdXTlNDb2xvcqI2KNIiIzk6V05TSW1hZ2Wi
-OShfEA9OU0tleWVkQXJjaGl2ZXLRPT5Ucm9vdIABAAgAEQAaACMALQAyADcARQBLAFQAWwBoAG8AdwB5
-AH4AgACCAIcAkgCUAJYAmACdAKAAogCkAKYAqACtAMQAxgDINOo07zT6NQM1FjUaNS01ODVBNUY1TjVR
-NVY1ZTVpNXA1eDWFNYo1jDWONZM1mzWeNaM1qzWuNcA1wzXIAAAAAAAAAgEAAAAAAAAAPwAAAAAAAAAA
-AAAAAAAANco
-</mutableData>
-        </image>
         <image name="second" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -15,6 +15,7 @@
 @interface FirstViewController : UIViewController<FBLoginViewDelegate>{
     //UIView *transBack;
     
+    IBOutlet UIImageView *topImage;
     IBOutlet UILabel *originalPriceLabel;
     IBOutlet UILabel *percentageOffLabel;
     IBOutlet UILabel *finalPrice;
@@ -29,6 +30,7 @@
     IBOutlet UITextField *additionalDiscount;
     IBOutlet UILabel *furtherDiscountLabel;
     IBOutlet UIView *profileTop;
+    IBOutlet UIView *fbview;
 
 
     

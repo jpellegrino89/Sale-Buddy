@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D0BEF321916DB9300E596C5 /* wall@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5D0BEF311916DB9300E596C5 /* wall@2x.jpg */; };
 		5D0D63A718B0FB4F0058672D /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0D63A618B0FB4F0058672D /* FacebookSDK.framework */; };
 		5D0D63A918B121FE0058672D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0D63A818B121FE0058672D /* QuartzCore.framework */; };
 		5D0D63B918BD5D030058672D /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0D63B818BD5D030058672D /* LoginView.m */; };
 		5D0D63BF18BD71550058672D /* wallpaper@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5D0D63BE18BD71550058672D /* wallpaper@2x.jpg */; };
 		5D0D63C118BD71ED0058672D /* wallpaper1@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5D0D63C018BD71ED0058672D /* wallpaper1@2x.jpg */; };
+		5D664FB519168BD400B82925 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D664FB419168BD400B82925 /* UIImage+ImageEffects.m */; };
+		5D664FB81916937900B82925 /* blue@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5D664FB71916937900B82925 /* blue@2x.jpg */; };
+		5D664FBA191695EB00B82925 /* water@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5D664FB9191695EB00B82925 /* water@2x.jpg */; };
 		5D75084D1812C6B600C62D34 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D75084C1812C6B600C62D34 /* Foundation.framework */; };
 		5D75084F1812C6B600C62D34 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D75084E1812C6B600C62D34 /* CoreGraphics.framework */; };
 		5D7508511812C6B600C62D34 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D7508501812C6B600C62D34 /* UIKit.framework */; };
@@ -59,12 +63,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D0BEF311916DB9300E596C5 /* wall@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "wall@2x.jpg"; path = "../../../../Downloads/wall@2x.jpg"; sourceTree = "<group>"; };
 		5D0D63A618B0FB4F0058672D /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		5D0D63A818B121FE0058672D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5D0D63B718BD5D030058672D /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
 		5D0D63B818BD5D030058672D /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
 		5D0D63BE18BD71550058672D /* wallpaper@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "wallpaper@2x.jpg"; sourceTree = "<group>"; };
 		5D0D63C018BD71ED0058672D /* wallpaper1@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "wallpaper1@2x.jpg"; sourceTree = "<group>"; };
+		5D664FB419168BD400B82925 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageEffects.m"; path = "../../../../Downloads/UIImageEffects/UIImageEffects/UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		5D664FB619168C1400B82925 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageEffects.h"; path = "../../../../Downloads/UIImageEffects/UIImageEffects/UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		5D664FB71916937900B82925 /* blue@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "blue@2x.jpg"; path = "../../../../Downloads/blue@2x.jpg"; sourceTree = "<group>"; };
+		5D664FB9191695EB00B82925 /* water@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "water@2x.jpg"; path = "../../../../Downloads/water@2x.jpg"; sourceTree = "<group>"; };
 		5D7508491812C6B600C62D34 /* Sale Buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sale Buddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D75084C1812C6B600C62D34 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5D75084E1812C6B600C62D34 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -170,11 +179,16 @@
 		5D7508521812C6B600C62D34 /* Sale Buddy */ = {
 			isa = PBXGroup;
 			children = (
+				5D664FB619168C1400B82925 /* UIImage+ImageEffects.h */,
+				5D664FB419168BD400B82925 /* UIImage+ImageEffects.m */,
 				5D75085B1812C6B600C62D34 /* AppDelegate.h */,
 				5D75085C1812C6B600C62D34 /* AppDelegate.m */,
 				5D75085E1812C6B600C62D34 /* Main.storyboard */,
 				5D0D63B718BD5D030058672D /* LoginView.h */,
 				5D0D63B818BD5D030058672D /* LoginView.m */,
+				5D0BEF311916DB9300E596C5 /* wall@2x.jpg */,
+				5D664FB71916937900B82925 /* blue@2x.jpg */,
+				5D664FB9191695EB00B82925 /* water@2x.jpg */,
 				5DA8C62D18DF125B004B491F /* background2@2x.png */,
 				5D7508611812C6B600C62D34 /* FirstViewController.h */,
 				5D7508621812C6B600C62D34 /* FirstViewController.m */,
@@ -318,6 +332,7 @@
 				5D82C6A518D91FAA004DD889 /* Gotham-BoldItalic.otf in Resources */,
 				5D82C69F18D91FAA004DD889 /* Gotham-ThinItalic.otf in Resources */,
 				5D82C6A118D91FAA004DD889 /* Gotham-BlackItalic.otf in Resources */,
+				5D664FB81916937900B82925 /* blue@2x.jpg in Resources */,
 				5D82C6A318D91FAA004DD889 /* Gotham-UltraItalic.otf in Resources */,
 				5D82C6A218D91FAA004DD889 /* Gotham-XLightItalic.otf in Resources */,
 				5DA8C63418E6F8F9004B491F /* Profile@2x.png in Resources */,
@@ -330,9 +345,11 @@
 				5D7508571812C6B600C62D34 /* InfoPlist.strings in Resources */,
 				5D82C6A818D91FAA004DD889 /* Gotham-Light.otf in Resources */,
 				5DA8C62E18DF125B004B491F /* background2@2x.png in Resources */,
+				5D0BEF321916DB9300E596C5 /* wall@2x.jpg in Resources */,
 				5D82C6A418D91FAA004DD889 /* Gotham-LightItalic.otf in Resources */,
 				5D82C6AC18D91FAA004DD889 /* Gotham-Medium.otf in Resources */,
 				5D82C69E18D91FAA004DD889 /* Gotham-BookItalic.otf in Resources */,
+				5D664FBA191695EB00B82925 /* water@2x.jpg in Resources */,
 				5D82C6A618D91FAA004DD889 /* Gotham-Bold.otf in Resources */,
 				5D82C6AB18D91FAA004DD889 /* Gotham-Ultra.otf in Resources */,
 				5D0D63BF18BD71550058672D /* wallpaper@2x.jpg in Resources */,
@@ -356,6 +373,7 @@
 			files = (
 				5D7508661812C6B600C62D34 /* SecondViewController.m in Sources */,
 				5D75085D1812C6B600C62D34 /* AppDelegate.m in Sources */,
+				5D664FB519168BD400B82925 /* UIImage+ImageEffects.m in Sources */,
 				5D7508631812C6B600C62D34 /* FirstViewController.m in Sources */,
 				5D0D63B918BD5D030058672D /* LoginView.m in Sources */,
 				5D7508591812C6B600C62D34 /* main.m in Sources */,

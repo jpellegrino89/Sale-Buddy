@@ -8,7 +8,7 @@
 
 #import "FirstViewController.h"
 #import <QuartzCore/QuartzCore.h>
-//#import "UIImage+ImageEffects.h"
+#import "UIImage+ImageEffects.h"
 
 @interface FirstViewController ()
 
@@ -22,6 +22,18 @@
 @implementation FirstViewController
 @synthesize finalPrice;
 
+-(IBAction) switchValueChanged{
+    if ([further isOn]) {
+        NSLog(@"Switch ON");
+        [self thirtyDiscount:nil];}
+    else {
+        
+        [self calculatePrice:nil];
+        [furtherDiscountLabel setText: [NSString stringWithFormat:@""]];
+        [additionalDiscount resignFirstResponder];
+        
+    }
+}
 // This method will be called when the user information has been fetched
 - (void)loginViewFetchedUserInfo:(FBLoginView *)loginView
                             user:(id<FBGraphUser>)user {
@@ -30,9 +42,6 @@
     self.nameLabel.font = [UIFont fontWithName:@"Gotham-Light" size:17];
     loginView.frame = CGRectOffset(loginView.frame, 5, -100);
     [self.view sendSubviewToBack:loginView];
-    
-    
-    
 }
 - (IBAction)place:(id)sender {
     // Initialize the place picker
@@ -54,29 +63,106 @@
     // Show the place picker modally
     [placePickerController presentModallyFromViewController:self animated:YES handler:nil];
 }
+- (void)imageTaped:(UIGestureRecognizer *)gestureRecognizer
+    {
+        if(FBSession.activeSession.state == FBSessionStateOpen){
+        
+        //self.profilePictureView.alpha = 0.0f;
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Do you want to Log Out of Facebook?"
+                                                        message:@""
+                                                       delegate:self
+                                              cancelButtonTitle:@"NO"
+                                              otherButtonTitles:@"YES", nil];
+        [alert show];
+        }
+        
+        else {
+            
+            // If there's one, just open the session silently, without showing the user the login UI
+            [FBSession openActiveSessionWithReadPermissions:@[@"public_profile"]
+                                               allowLoginUI:NO
+                                          completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
+                                              // Handler for session state changes
+                                              // This method will be called EACH time the session state changes,
+                                              // also for intermediate states and NOT just when the session open
+                                              
+                                          }];
+        }
+
+
+}
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        NSLog(@"Clicked button index 0");
+        [FBSession.activeSession closeAndClearTokenInformation];
+        // Add the action here
+    } else {
+        NSLog(@"Clicked button index other than 0");
+        // Add another action here
+    }
+}
 
 - (IBAction)FBLogout:(id)sender {
      [FBSession.activeSession closeAndClearTokenInformation];
+    fbview.hidden=NO;
+
+
 }
-
-
 
 - (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView {
     self.profilePictureView.profileID = nil;
     self.nameLabel.text = @"";
     self.statusLabel.text= @"You're not logged in!";
+    fbview.hidden=NO;
+
 }
 
 -(IBAction)backgroundTouched:(id)sender
 {
 	[originalPrice resignFirstResponder];
     [percentageOff resignFirstResponder];
+    [additionalDiscount resignFirstResponder];
     //[additionalDiscount resignFirstResponder];
 }
 
 - (void)viewDidLoad
 
 {
+    if(FBSession.activeSession.state == FBSessionStateOpen){
+       // [self.view sendSubviewToBack:fbview];
+    }
+    fbview.hidden=YES;
+
+    // Set vertical effect
+    UIInterpolatingMotionEffect *verticalMotionEffect =
+    [[UIInterpolatingMotionEffect alloc]
+     initWithKeyPath:@"center.y"
+     type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
+    verticalMotionEffect.minimumRelativeValue = @(-30);
+    verticalMotionEffect.maximumRelativeValue = @(30);
+    
+    // Set horizontal effect
+    UIInterpolatingMotionEffect *horizontalMotionEffect =
+    [[UIInterpolatingMotionEffect alloc]
+     initWithKeyPath:@"center.x"
+     type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
+    horizontalMotionEffect.minimumRelativeValue = @(-30);
+    horizontalMotionEffect.maximumRelativeValue = @(30);
+    
+    // Create group to combine both
+    UIMotionEffectGroup *group = [UIMotionEffectGroup new];
+    group.motionEffects = @[horizontalMotionEffect, verticalMotionEffect];
+    
+    // Add both effects to your view
+    [topImage addMotionEffect:group];
+    
+    
+    UIImage *img = [UIImage imageNamed:@"wall.jpg"];
+    
+    UIColor *tintColor = [UIColor colorWithWhite:0.0 alpha:0.3];
+    img=[img applyBlurWithRadius:10 tintColor:tintColor saturationDeltaFactor:1.8 maskImage:nil];
+    topImage.backgroundColor = [UIColor colorWithPatternImage: img];
+    
     profileTop.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"profile"]];
     
    // self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
@@ -117,7 +203,7 @@
     calculateButton.layer.masksToBounds = YES;
     calculateButton.layer.cornerRadius = 5.0;
     [calculateButton.titleLabel setFont:[UIFont fontWithName:@"Gotham-Book" size:16]];
-    calculateButton.layer.borderColor=[[UIColor blueColor] CGColor];
+    calculateButton.layer.borderColor=[[UIColor whiteColor] CGColor];
     [calculateButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
 
     
@@ -125,8 +211,10 @@
 
 
     loginView.frame = CGRectOffset(loginView.frame, (self.view.center.x - (loginView.frame.size.width / 2)+20), 34);
+  
 
     [self.view addSubview:loginView];
+    
     
     //Gesture Recognizer
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
@@ -154,23 +242,125 @@
    // self.profilePictureView.profileID = @"user.id";
     // Add the profile picture view to the main view
     [self.view addSubview:self.profilePictureView];
+    self.profilePictureView.layer.cornerRadius=self.profilePictureView.frame.size.width / 2;
+    self.profilePictureView.clipsToBounds = YES;
+    self.profilePictureView.userInteractionEnabled=YES;
+    self.profilePictureView.layer.borderWidth=1.0f;
+    self.profilePictureView.layer.borderColor = [UIColor whiteColor].CGColor;
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTaped:)];
+    singleTap.numberOfTapsRequired = 1;
+    singleTap.numberOfTouchesRequired = 1;
+    [self.profilePictureView addGestureRecognizer:singleTap];
+    [self.profilePictureView setUserInteractionEnabled:YES];
+
     //PICTURE VIEW END
     
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
-/*
--(IBAction) switchValueChanged{
-    if (further.on) {[self thirtyDiscount:nil];}
-    else { [self calculatePrice];
-        [furtherDiscountLabel setText: [NSString stringWithFormat:@""]];
+
+
+-(void)furtherDiscount{
+    /*
+     
+     o=[[originalPrice text] floatValue];
+     p=[[percentageOff text] floatValue];
+     r=o * (p/100);
+     
+     f
+     
+     
+     [ammountDeducted setText:[NSString stringWithFormat:@"%.2f", o * (p/100)]];
+     [salePrice setText: [NSString stringWithFormat:@"%.2f", o-r]];
+     
+     */
+    
+    sP=o-r;
+    
+    NSString *myMessage = [NSString stringWithFormat:@"The current Price is $%.2f",sP];
+    
+    furtherDiscount= [[UIAlertView alloc] initWithTitle:@"Further Discount" message:myMessage delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:@"30%",nil];
+    furtherDiscount.alertViewStyle = UIAlertViewStylePlainTextInput;
+    UITextField * alertTextField = [furtherDiscount textFieldAtIndex:0];
+    alertTextField.keyboardType = UIKeyboardTypeDecimalPad;
+    alertTextField.placeholder = @"%";
+    [furtherDiscount show];
+    float percentageValue = [[alertTextField text] floatValue];
+    
+    
+    float discountedPrice=sP*(percentageValue/100);
+    //float finalDP=sP-discountedPrice;
+    
+    
+    discountedResult = [[UIAlertView alloc] initWithTitle:@"Final Discount" message:[NSString stringWithFormat:@"The discounted Price is %.2f", discountedPrice]
+                                                 delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:nil];
+    
+    
+    
+}
+
+-(IBAction)thirtyDiscount:(id)sender {
+    
+    
+    
+    [originalPrice resignFirstResponder];
+    [percentageOff resignFirstResponder];
+    [additionalDiscount resignFirstResponder];
+    float aD=[[additionalDiscount text] floatValue];
+    sP=o-r;
+    float thirtyo=sP;
+    //float thirtyp=30.00;
+    float thirtyp=aD;
+    float thirtyr=thirtyo * (thirtyp/100);
+    
+    
+    [ammountDeducted setText:[NSString stringWithFormat:@"%.2f", thirtyo * (thirtyp/100)]];
+    [finalPrice setText: [NSString stringWithFormat:@"$""%.2f", thirtyo-thirtyr]];
+    [furtherDiscountLabel setText: [NSString stringWithFormat:@"+""%@""%%", additionalDiscount.text]];
+    
+    
+    if(o==0){
+        UIAlertView *someError = [[UIAlertView alloc] initWithTitle: @"Calculation Error" message: @"You do not have a price to discount!" delegate: self cancelButtonTitle: @"Ok" otherButtonTitles: nil];
         
+        [someError show];
+        [self.view addSubview:calculateButton];
+        further.on=NO;
         
         
     }
+    
+    
+    if(o>1){
+        //Calculate Price Custom Button
+        UIButton *calculatePrice2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        //[calculatePrice setTitle:@"Calculate" forState:UIControlStateNormal];
+        calculatePrice2.frame = CGRectMake(106, 163, 101, 39); // position in the parent view and set the size of the button
+        //UIImage *buttonImage = [UIImage imageNamed:@"ClearNormal.png"];
+        //[calculatePrice setBackgroundImage:buttonImage forState:UIControlStateNormal];
+        //[calculatePrice setImage:[UIImage imageNamed:@"ClearNormal.png"] forState:UIControlStateNormal];
+        // add targets and actions
+        [calculatePrice2 addTarget:self action:@selector(calculatePrice) forControlEvents:UIControlEventTouchUpInside];
+        // add to a view
+        [calculatePrice2 setTitle:@"Back" forState:UIControlStateNormal];
+        
+        [calculateButton removeFromSuperview];
+        //[self.view addSubview:calculatePrice2];
+    }
+    if (further.on)
+    {
+        
+        
+    }
+    else
+    {
+        [finalPrice setText: [NSString stringWithFormat:@"%.2f", o-r]];
+        
+        
+    }
+    
 }
- */
+
 
 // Handle possible errors that can occur during login
 - (void)loginView:(FBLoginView *)loginView handleError:(NSError *)error {
@@ -222,8 +412,6 @@
 {
     further.on=NO;
     
-    
-    
     //Caculate original * percentage off
     o=[[originalPrice text] floatValue];
     p=[[percentageOff text] floatValue];
@@ -239,20 +427,11 @@
         [finalPrice setText: @"Free!"];
     }
     if(o==0&&p==0){
+        UIAlertView *CandPerror = [[UIAlertView alloc] initWithTitle: @"Calculation Error" message: @"You must specify the Original Price and the Percentage Off" delegate: self cancelButtonTitle: @"Ok" otherButtonTitles: nil];
         
-    //CustomAlertView *someError = [[CustomAlertView alloc] initWithTitle: @"Calculation Error" message: @"You must specify the Original Price and the Percentage Off" delegate: self cancelButtonTitle: @"Ok" otherButtonTitles: nil];
-      //  [someError show];
-         
+        [CandPerror show];
+
         
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"title" message:@"\n\n\n" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
-        UILabel *txtField = [[UILabel alloc] initWithFrame:CGRectMake(12.0, 25.0, 260.0, 95.0)];
-        [txtField setFont:[UIFont fontWithName:@"Gotham-Book" size:(18.0)]];
-        txtField.numberOfLines = 3;
-        txtField.textColor = [UIColor whiteColor];
-        txtField.text = @"Look at me, I am a Red and Bold Label.";
-        txtField.backgroundColor = [UIColor clearColor];
-        [alertView addSubview:txtField];
-        //[alertView show];
     }
     else if(o==0){
         UIAlertView *someError = [[UIAlertView alloc] initWithTitle: @"Calculation Error" message: @"You must specify the Original Price" delegate: self cancelButtonTitle: @"Ok" otherButtonTitles: nil];

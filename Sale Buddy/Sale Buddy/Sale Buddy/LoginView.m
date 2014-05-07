@@ -8,6 +8,7 @@
 
 #import "LoginView.h"
 #import <QuartzCore/QuartzCore.h>
+#import "UIImage+ImageEffects.h"
 
 
 @interface LoginView ()
@@ -33,13 +34,33 @@
     //loginView.frame = CGRectOffset(loginView.frame, 5, -100);
     self.welcomeLabel.alpha=0;
     self.profilePictureView.alpha=1;
+    self.profilePictureView.layer.cornerRadius=self.profilePictureView.frame.size.width / 2;
+    self.profilePictureView.layer.borderWidth=3.0f;
+    self.profilePictureView.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.profilePictureView.layer.shadowOffset=CGSizeMake(0,1);
+    self.profilePictureView.layer.shadowOpacity=1;
+    self.profilePictureView.layer.shadowRadius=1.0;
+   // self.profilePictureView.layer.cornerRadius=10.0f;
+    
+    CALayer* containerLayer = [CALayer layer];
+    containerLayer.shadowColor = [UIColor blackColor].CGColor;
+    containerLayer.shadowRadius = 2;
+    containerLayer.shadowOffset = CGSizeMake(1, 1);
+    containerLayer.shadowOpacity = 1;
+    
+    [containerLayer addSublayer:self.profilePictureView.layer];
+    [self.view.layer addSublayer:containerLayer];
+
+    
+    
+    self.profilePictureView.clipsToBounds = YES;
   
     [FBLoginView beginAnimations:nil context:NULL];
     //loginView.frame = CGRectOffset(loginView.frame, 5, 5);
 
     [FBLoginView setAnimationDuration:0.5];
     [FBLoginView commitAnimations];
-    [self performSegueWithIdentifier:@"FBMove" sender:self];
+    [self performSelector:@selector(initialView) withObject:self afterDelay:10.0];
     /*
     NSString * storyboardName = @"Main";
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
@@ -48,6 +69,11 @@
     */
     
     
+
+}
+-(void)initialView{
+    [self performSegueWithIdentifier:@"FBMove" sender:self];
+
 
 }
 - (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView {
@@ -64,7 +90,7 @@
 
 - (void)viewDidLoad
 {
-    [[FBProfilePictureView layer] setCornerRadius:10];
+    //[[FBProfilePictureView layer] setCornerRadius:10];
     
     _welcomeLabel.font=[UIFont fontWithName:@"Gotham-Light" size:50];
 
@@ -88,10 +114,19 @@
     loginView.frame=CGRectMake(0, 0, 0, 0);
     
     [self.view addSubview:loginView];
+ 
     
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"wallpaper1.jpg"]];
+    UIColor *tintColor = [UIColor colorWithWhite:0.0 alpha:0.3];
+
+    UIImage *img = [UIImage imageNamed:@"wall.jpg"];
+    
+    img=[img applyBlurWithRadius:10 tintColor:tintColor saturationDeltaFactor:1.8 maskImage:nil];
+    
+       self.view.backgroundColor = [UIColor colorWithPatternImage: img];
 
     [super viewDidLoad];
+    //self.profilePictureView.layer.cornerRadius=self.profilePictureView.frame.size.width / 2;
+   // self.profilePictureView.clipsToBounds = YES;
     
 	// Do any additional setup after loading the view.
 }
