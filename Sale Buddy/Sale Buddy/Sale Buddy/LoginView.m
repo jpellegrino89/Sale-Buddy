@@ -60,7 +60,7 @@
 
     [FBLoginView setAnimationDuration:0.5];
     [FBLoginView commitAnimations];
-    [self performSelector:@selector(initialView) withObject:self afterDelay:10.0];
+    [self performSelector:@selector(initialView) withObject:self afterDelay:2.0];
     /*
     NSString * storyboardName = @"Main";
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
@@ -78,10 +78,10 @@
 }
 - (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView {
     self.profilePictureView.profileID = nil;
-    self.profilePictureView.alpha=0;
-    self.nameLabel.text = @"";
+    self.profilePictureView.alpha=1;
+    self.nameLabel.text = @"Logging in is easy, just tap the button below";
     self.statusLabel.text= @"You're not logged in!";
-    self.welcomeLabel.text=@"Welcome";
+    self.welcomeLabel.text=@"";
     self.welcomeLabel.alpha=1;
     
 }
@@ -94,7 +94,7 @@
     
     _welcomeLabel.font=[UIFont fontWithName:@"Gotham-Light" size:50];
 
-    //_saleBuddy.font=[UIFont fontWithName:@"Gotham-Book" size:40];
+    _saleBuddy.font=[UIFont fontWithName:@"Gotham-Book" size:40];
     _saleBuddy.font=[UIFont fontWithName:@"Avenir" size:40];
     //_saleBuddy.shadowColor=[UIColor blackColor];
     //_saleBuddy.shadowOffset=CGSizeMake(1,1);

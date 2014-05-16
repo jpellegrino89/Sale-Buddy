@@ -9,6 +9,7 @@
 #import "FirstViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "UIImage+ImageEffects.h"
+#import <Twitter/Twitter.h>
 
 @interface FirstViewController ()
 
@@ -20,12 +21,15 @@
 @end
 
 @implementation FirstViewController
-@synthesize finalPrice;
+@synthesize finalPrice, further, banner;
 
 -(IBAction) switchValueChanged{
-    if ([further isOn]) {
+    if (further.on) {
         NSLog(@"Switch ON");
-        [self thirtyDiscount:nil];}
+        [self thirtyDiscount:nil];
+        
+    
+    }
     else {
         
         [self calculatePrice:nil];
@@ -38,30 +42,10 @@
 - (void)loginViewFetchedUserInfo:(FBLoginView *)loginView
                             user:(id<FBGraphUser>)user {
     self.profilePictureView.profileID = user.id;
-    self.nameLabel.text = user.name;
+    self.nameLabel.text = [user.name uppercaseString];
     self.nameLabel.font = [UIFont fontWithName:@"Gotham-Light" size:17];
     loginView.frame = CGRectOffset(loginView.frame, 5, -100);
     [self.view sendSubviewToBack:loginView];
-}
-- (IBAction)place:(id)sender {
-    // Initialize the place picker
-    FBPlacePickerViewController *placePickerController = [[FBPlacePickerViewController alloc] init];
-    // Set the place picker title
-    placePickerController.title = @"Pick Place";
-    // Hard code current location to Menlo Park, CA
-    placePickerController.locationCoordinate = CLLocationCoordinate2DMake(37.453827, -122.182187);
-    // Configure the additional search parameters
-    placePickerController.radiusInMeters = 1000;
-    placePickerController.resultsLimit = 50;
-    placePickerController.searchText = @"restaurant";
-    
-    // TODO: Set up the place picker delegate to handle
-    // picker callbacks, ex: Done/Cancel button
-    
-    // Load the place data
-    [placePickerController loadData];
-    // Show the place picker modally
-    [placePickerController presentModallyFromViewController:self animated:YES handler:nil];
 }
 - (void)imageTaped:(UIGestureRecognizer *)gestureRecognizer
     {
@@ -101,6 +85,33 @@
         // Add another action here
     }
 }
+-(IBAction)reset:(id)sender
+{
+    [originalPrice setText:@""];
+    [percentageOff setText:@""];
+    [finalPrice setText:@" " ];
+    [ammountDeducted setText:@" "];
+    o=0;
+    p=o;
+    r=o;
+    sP=0;
+    further.on=NO;
+    [additionalDiscount setText:@""];
+    [furtherDiscountLabel setText:@""];
+    
+    
+}
+-(IBAction)furtherReset:(id)sender
+{
+
+    [ammountDeducted setText:@" "];
+   
+    further.on=NO;
+    [additionalDiscount setText:@""];
+    [furtherDiscountLabel setText:@""];
+    
+    
+}
 
 - (IBAction)FBLogout:(id)sender {
      [FBSession.activeSession closeAndClearTokenInformation];
@@ -112,11 +123,22 @@
 - (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView {
     self.profilePictureView.profileID = nil;
     self.nameLabel.text = @"";
-    self.statusLabel.text= @"You're not logged in!";
+   // self.statusLabel.text= @"You're not logged in!";
     fbview.hidden=NO;
 
 }
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
 
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if (motion == UIEventSubtypeMotionShake)
+    {
+        [self reset:self];
+    } 
+}
 -(IBAction)backgroundTouched:(id)sender
 {
 	[originalPrice resignFirstResponder];
@@ -128,6 +150,18 @@
 - (void)viewDidLoad
 
 {
+    [originalPrice setText:@""];
+    [percentageOff setText:@""];
+    [finalPrice setText:@" " ];
+    [ammountDeducted setText:@" "];
+    o=0;
+    p=o;
+    r=o;
+    sP=0;
+    further.on=NO;
+    [additionalDiscount setText:@""];
+    [furtherDiscountLabel setText:@""];
+    
     if(FBSession.activeSession.state == FBSessionStateOpen){
        // [self.view sendSubviewToBack:fbview];
     }
@@ -156,9 +190,19 @@
     // Add both effects to your view
     [topImage addMotionEffect:group];
     
+    //top
+    UIImage *img1 = [UIImage imageNamed:@"white.png"];
+    tweetButton.font= [UIFont fontWithName:@"Gotham-Book" size:17];
+
     
+    UIColor *tintColor1 = [UIColor colorWithWhite:0.0 alpha:0.1];
+    //img1=[img1 applyBlurWithRadius:50 tintColor:tintColor1 saturationDeltaFactor:1.8 maskImage:nil];
+    
+    blurTop.backgroundColor = [UIColor colorWithPatternImage: img1];
+   // blurTop.alpha=0.6;
+    
+    //background blur
     UIImage *img = [UIImage imageNamed:@"wall.jpg"];
-    
     UIColor *tintColor = [UIColor colorWithWhite:0.0 alpha:0.3];
     img=[img applyBlurWithRadius:10 tintColor:tintColor saturationDeltaFactor:1.8 maskImage:nil];
     topImage.backgroundColor = [UIColor colorWithPatternImage: img];
@@ -183,16 +227,22 @@
     loginView.delegate = self;
 
     originalPriceLabel.text=@"Original Price";
-   // originalPriceLabel.font = [UIFont fontWithName:@"Gotham-Light" size:17];
+    originalPriceLabel.font = [UIFont fontWithName:@"Gotham-Light" size:17];
     
     percentageOffLabel.text=@"Percentage Off";
-  //  percentageOffLabel.font = [UIFont fontWithName:@"Gotham-Light" size:17];
+    percentageOffLabel.font = [UIFont fontWithName:@"Gotham-Light" size:17];
     
     
-   // finalPrice.font = [UIFont fontWithName:@"Gotham-Medium" size:30];
+    finalPrice.font = [UIFont fontWithName:@"Gotham-Medium" size:30];
 
-   // originalPrice.font=[UIFont fontWithName:@"Gotham-Book" size:23];
-   // percentageOff.font=[UIFont fontWithName:@"Gotham-Book" size:23];
+    originalPrice.font=[UIFont fontWithName:@"Gotham-Book" size:23];
+    percentageOff.font=[UIFont fontWithName:@"Gotham-Book" size:23];
+    ammountDeducted.font=[UIFont fontWithName:@"Gotham-Book" size:17];
+    furtherDiscountLabel.font=[UIFont fontWithName:@"Gotham-Book" size:17];
+    adLabel.font=[UIFont fontWithName:@"Gotham-Book" size:15];
+    postButton.font=[UIFont fontWithName:@"Gotham-Book" size:17];
+
+
     
     originalPrice.keyboardType=UIKeyboardTypeDecimalPad;
     percentageOff.keyboardType=UIKeyboardTypeDecimalPad;
@@ -262,19 +312,22 @@
 
 
 -(void)furtherDiscount{
-    /*
+    
      
      o=[[originalPrice text] floatValue];
      p=[[percentageOff text] floatValue];
      r=o * (p/100);
      
-     f
+    
      
      
-     [ammountDeducted setText:[NSString stringWithFormat:@"%.2f", o * (p/100)]];
-     [salePrice setText: [NSString stringWithFormat:@"%.2f", o-r]];
+     //[ammountDeducted setText:[NSString stringWithFormat:@"%.2f", o * (p/100)]];
+     [finalPrice setText: [NSString stringWithFormat:@"%.2f", o-r]];
      
-     */
+    NSString *ammountDeductedLabel=@"has been deducted";
+    NSString *saved=[NSString stringWithFormat:@"%.2f", o * (p/100)];
+    savedLabel.Text=saved;
+    [ammountDeducted setText:[NSString stringWithFormat:@"$ %@ %@",saved,ammountDeductedLabel]];
     
     sP=o-r;
     
@@ -315,7 +368,11 @@
     float thirtyr=thirtyo * (thirtyp/100);
     
     
-    [ammountDeducted setText:[NSString stringWithFormat:@"%.2f", thirtyo * (thirtyp/100)]];
+    NSString *saved=[NSString stringWithFormat:@"$%.2f", o * (p/100)];
+    NSString *ammountDeductedLabel=@"has been deducted";
+    NSString *deductedSaved=[NSString stringWithFormat:@"$%.2f", (o*(p/100))+(thirtyo * (thirtyp/100))];
+    savedLabel.Text=deductedSaved;
+    [ammountDeducted setText:[NSString stringWithFormat:@"%@ %@",deductedSaved,ammountDeductedLabel]];
     [finalPrice setText: [NSString stringWithFormat:@"$""%.2f", thirtyo-thirtyr]];
     [furtherDiscountLabel setText: [NSString stringWithFormat:@"+""%@""%%", additionalDiscount.text]];
     
@@ -344,7 +401,7 @@
         // add to a view
         [calculatePrice2 setTitle:@"Back" forState:UIControlStateNormal];
         
-        [calculateButton removeFromSuperview];
+      //  [calculateButton removeFromSuperview];
         //[self.view addSubview:calculatePrice2];
     }
     if (further.on)
@@ -410,6 +467,13 @@
 - (IBAction)calculatePrice:(id)sender
 
 {
+    
+   
+    [ammountDeducted setText:@" "];
+    
+    [additionalDiscount setText:@""];
+    [furtherDiscountLabel setText:@""];
+    
     further.on=NO;
     
     //Caculate original * percentage off
@@ -417,7 +481,10 @@
     p=[[percentageOff text] floatValue];
     r=o * (p/100);
     
-    [ammountDeducted setText:[NSString stringWithFormat:@"%.2f", o * (p/100)]];
+    NSString *ammountDeductedLabel=@"has been deducted";
+    NSString *saved=[NSString stringWithFormat:@"$""%.2f", o * (p/100)];
+    savedLabel.Text=saved;
+    [ammountDeducted setText:[NSString stringWithFormat:@"%@ %@",saved,ammountDeductedLabel]];
     [finalPrice setText: [NSString stringWithFormat:@"$""%.2f", o-r]];
     [percentageOff resignFirstResponder];
     [originalPrice resignFirstResponder];
@@ -619,15 +686,76 @@
 
 
 -(IBAction)btnTwitterSharing_Clicked:(id)sender {
-    NSString *textToShare = @"your text";
-   // UIImage *imageToShare = [UIImage imageNamed:@"yourImage.png"];
-    NSArray *itemsToShare = @[textToShare];
-    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
-    activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeCopyToPasteboard, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll,UIActivityTypePostToFacebook,UIActivityTypePostToTwitter]; //or whichever you don't need
-    [self presentViewController:activityVC animated:YES completion:nil];
+    //This creates the tweet view that we'll present modally when a user clicks the button.
+    TWTweetComposeViewController *tweetView = [[TWTweetComposeViewController alloc] init];
+    
+    //You set a default tweet to show in the view
+    [tweetView setInitialText:[NSString stringWithFormat:@"Check out this great deal I found, I saved %@ calculated with #SaleBuddy",savedLabel.text]];
+    
+    
+    // Specify a block to be called when the user is finished. This block is not guaranteed
+    // to be called on any particular thread.
+    // All we are doing is dismissing the modal view when the tweet is sent.
+    tweetView.completionHandler = ^(TWTweetComposeViewControllerResult result)
+    {
+        [self dismissModalViewControllerAnimated:YES];
+    };
+    
+    //present tweet view modally
+    [self presentModalViewController:tweetView animated:YES];
+
 
 }
--(IBAction)btnFacebookSharing_Clicked:(id)sender {
+-(IBAction)btnFacebookSharing_Clicked:(id)sender{
+    NSMutableDictionary<FBGraphObject> *object =
+    [FBGraphObject openGraphObjectForPostWithType:@"salebuddy:sale"
+                                            title:@"Calculated a Sale"
+                                            image:@"http://i194.photobucket.com/albums/z276/revolvrocelot/FB1066.png"
+                                              url:@"https://itunes.apple.com/us/app/sale-buddy/id525314025?mt=8"
+                                      description:[NSString stringWithFormat:@"I saved ""%@ calculated with", savedLabel.text]];;
+    
+    [FBRequestConnection startForPostWithGraphPath:@"me/objects/salebuddy:sale"
+                                       graphObject:object
+                                 completionHandler:^(FBRequestConnection *connection,
+                                                     id result,
+                                                     NSError *error) {
+                                     // handle the result
+                                 }];
+    // Post custom object
+    [FBRequestConnection startForPostOpenGraphObject:object completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+        if(!error) {
+            // get the object ID for the Open Graph object that is now stored in the Object API
+            NSString *objectId = [result objectForKey:@"id"];
+            NSLog([NSString stringWithFormat:@"object id: %@", objectId]);
+            
+            // Further code to post the OG story goes here
+            // create an Open Graph action
+            id<FBOpenGraphAction> action = (id<FBOpenGraphAction>)[FBGraphObject graphObject];
+            [action setObject:objectId forKey:@"sale"];
+            
+            // create action referencing user owned object
+            [FBRequestConnection startForPostWithGraphPath:@"/me/salebuddy:sale" graphObject:action completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                if(!error) {
+                    NSLog([NSString stringWithFormat:@"OG story posted, story id: %@", [result objectForKey:@"id"]]);
+                    [[[UIAlertView alloc] initWithTitle:@"OG story posted"
+                                                message:@"Check your Facebook profile or activity log to see the story."
+                                               delegate:self
+                                      cancelButtonTitle:@"OK!"
+                                      otherButtonTitles:nil] show];
+                } else {
+                    // An error occurred
+                    NSLog(@"Encountered an error posting to Open Graph: %@", error);
+                }
+            }];
+            
+        } else {
+            // An error occurred
+            NSLog(@"Error posting the Open Graph object to the Object API: %@", error);
+        }
+        
+    }];
+}
+-(IBAction)btFacebookSharing_Clicked:(id)sender {
     /*(if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
         SLComposeViewController * fbSheetOBJ = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
         
@@ -640,11 +768,12 @@
     */
     // Check if the Facebook app is installed and we can present the share dialog
     FBShareDialogParams *params = [[FBShareDialogParams alloc] init];
-    params.link = [NSURL URLWithString:@"https://itunes.apple.com/us/app/sale-buddy/id525314025?mt=8"];
-    params.name = @"Check out this Deal I found!";
-    params.caption = @"Caption";
-    params.picture = [NSURL URLWithString:@"http://i.imgur.com/g3Qc1HN.png"];
-    params.description = [NSString stringWithFormat:@"Check out this great deal I found! %@",finalPrice.text];
+   // params.link = [NSURL URLWithString:@"https://itunes.apple.com/us/app/sale-buddy/id525314025?mt=8"];
+    params.name = [NSString stringWithFormat:@"I saved $""@%@alculated with", savedLabel.text];
+   // params.name=@"Sale Buddy";
+    //params.picture = [NSURL URLWithString:@"http://i194.photobucket.com/albums/z276/revolvrocelot/FB1066.png"];
+    params.caption = @"I found a great deal calculated with Sale Buddy";
+    params.description = [NSString stringWithFormat:@"I saved ""%@ calculated with", savedLabel.text];
     
     // If the Facebook app is installed and we can present the share dialog
     if ([FBDialogs canPresentShareDialogWithParams:params]) {
@@ -672,11 +801,11 @@
         // Put together the dialog parameters
         NSString *string1=[NSString stringWithFormat:@"Check out this great deal I found! %@",finalPrice.text];
         NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                       @"Sharing Tutorial", @"name",
-                                       @"Build great social apps and get more installs.", @"caption",
+                                       @"Sale Buddy", @"name",
+                                       @"I found a great deal calculated with Sale Buddy", @"caption",
                                        @"Allow your users to share stories on Facebook from your app using the iOS SDK.", @"description",
                                        @"https://developers.facebook.com/docs/ios/share/", @"link",
-                                       @"http://i.imgur.com/g3Qc1HN.png", @"place",
+                                       @"http://i194.photobucket.com/albums/z276/revolvrocelot/iTunesArtwork2x.png", @"place",
                                        nil];
         
         // Show the feed dialog
@@ -722,13 +851,13 @@
     return params;
 }
 
--(void)bannerViewDidLoad:(ADBannerView *)abanner{
-    if(self.bannerVisible){
+-(void)bannerViewDidLoad:(ADBannerView *)banner{
+    if(self.bannerIsVisible){
         [UIView beginAnimations:@"animatedAdBannerOn" context:NULL];
-        _banner.frame =CGRectOffset(_banner.frame, 0, 50.0);
+        banner.frame =CGRectOffset(banner.frame, 0, 50.0);
         [UIView commitAnimations];
-        self.bannerVisible=YES;
-        _banner.frame =CGRectZero;
+        self.bannerIsVisible=YES;
+        banner.frame =CGRectZero;
         
         
         
@@ -755,11 +884,11 @@
 }
 
 -(void)bannerView:(ADBannerView *)aBanner didFailToReceiveAdWithError:(NSError *)error{
-    if(self.bannerVisible){
+    if(self.bannerIsVisible){
         [UIView beginAnimations:@"animatedAdBannerOff" context:NULL];
-        _banner.frame =CGRectOffset(_banner.frame, 0, -320.0);
+        banner.frame =CGRectOffset(banner.frame, 0, -320.0);
         [UIView commitAnimations];
-        self.bannerVisible=NO;
+        self.bannerIsVisible=NO;
     }
 }
 

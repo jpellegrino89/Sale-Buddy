@@ -12,9 +12,11 @@
 #import <iAd/iAd.h>
 
 
-@interface FirstViewController : UIViewController<FBLoginViewDelegate>{
+@interface FirstViewController : UIViewController<FBLoginViewDelegate,ADBannerViewDelegate>{
     //UIView *transBack;
     
+    ADBannerView *banner;
+    BOOL bannerIsVisible;
     IBOutlet UIImageView *topImage;
     IBOutlet UILabel *originalPriceLabel;
     IBOutlet UILabel *percentageOffLabel;
@@ -25,13 +27,15 @@
     IBOutlet UITextField *originalPrice;
     IBOutlet UITextField *percentageOff;
     IBOutlet UIView *login;
-    UISwitch *further;
+    IBOutlet UISwitch *further;
     IBOutlet UILabel *ammountDeducted;
     IBOutlet UITextField *additionalDiscount;
     IBOutlet UILabel *furtherDiscountLabel;
     IBOutlet UIView *profileTop;
     IBOutlet UIView *fbview;
-
+    IBOutlet UILabel *savedLabel;
+    IBOutlet UIView *blurTop;
+    IBOutlet UILabel *adLabel;
 
     
     NSInteger original,sale,tempCalc,result;
@@ -49,7 +53,7 @@
 @property (strong, nonatomic) IBOutlet FBProfilePictureView *profilePictureView;
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *statusLabel;
-@property (nonatomic, assign) BOOL bannerVisible;
+@property (nonatomic, assign) BOOL bannerIsVisible;
 @property (nonatomic, retain) IBOutlet ADBannerView *banner;
 @property (nonatomic, retain) IBOutlet UISwitch *further;
 @property (nonatomic, retain) IBOutlet UILabel *finalPrice;
