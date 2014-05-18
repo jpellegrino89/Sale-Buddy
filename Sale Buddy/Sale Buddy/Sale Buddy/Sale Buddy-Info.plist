@@ -9,7 +9,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.ready.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>com.almostready.discountedPrice</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -30,7 +30,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>20</string>
+	<string>4.0</string>
 	<key>FacebookAppID</key>
 	<string>298178593593943</string>
 	<key>FacebookDisplayName</key>

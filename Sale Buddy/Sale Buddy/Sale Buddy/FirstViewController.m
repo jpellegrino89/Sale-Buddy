@@ -98,6 +98,8 @@
     further.on=NO;
     [additionalDiscount setText:@""];
     [furtherDiscountLabel setText:@""];
+    [ammountDeducted setText:@" "];
+    [savedLabel setText:@" "];
     
     
 }
@@ -707,6 +709,88 @@
 
 }
 -(IBAction)btnFacebookSharing_Clicked:(id)sender{
+    
+    // Create an object
+    id<FBGraphObject> object =
+    [FBGraphObject openGraphObjectForPostWithType:@"salebuddy:sale"
+                                            title:@"Calculated a Sale"
+                                            image:@"http://i194.photobucket.com/albums/z276/revolvrocelot/FB1066.png"
+                                              url:@"https://itunes.apple.com/us/app/sale-buddy/id525314025?mt=8"
+                                      description:[NSString stringWithFormat:@"I saved ""%@!", savedLabel.text]];;;
+    // Create an action
+    id<FBOpenGraphAction> action = (id<FBOpenGraphAction>)[FBGraphObject graphObject];
+    
+    // Link the object to the action
+    [action setObject:object forKey:@"sale"];
+     action[@"price"]=[NSString stringWithFormat:@"%@", savedLabel.text];
+    
+    // Check if the Facebook app is installed and we can present the share dialog
+    FBOpenGraphActionParams *params = [[FBOpenGraphActionParams alloc] init];
+    params.action = action;
+    params.actionType = @"salebuddy:calculate";
+    
+    // If the Facebook app is installed and we can present the share dialog
+    if([FBDialogs canPresentShareDialogWithOpenGraphActionParams:params]) {
+        // Show the share dialog
+        [FBDialogs presentShareDialogWithOpenGraphAction:action
+                                              actionType:@"salebuddy:calculate"
+                                     previewPropertyName:@"sale"
+                                                 handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
+                                                     if(error) {
+                                                         // There was an error
+                                                         NSLog([NSString stringWithFormat:@"Error publishing story: %@", error.description]);
+                                                     } else {
+                                                         // Success
+                                                         NSLog(@"result %@", results);
+                                                     }
+                                                 }];
+        
+        // If the Facebook app is NOT installed and we can't present the share dialog
+    } else {
+        // FALLBACK: publish just a link using the Feed dialog
+        // Put together the dialog parameters
+        NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                       @"Roasted pumpkin seeds", @"name",
+                                       @"Healthy snack.", @"caption",
+                                       @"Crunchy pumpkin seeds roasted in butter and lightly salted.", @"description",
+                                       @"http://example.com/roasted_pumpkin_seeds", @"link",
+                                       @"http://i.imgur.com/g3Qc1HN.png", @"picture",
+                                       nil];
+        
+        // Show the feed dialog
+        [FBWebDialogs presentFeedDialogModallyWithSession:nil
+                                               parameters:params
+                                                  handler:^(FBWebDialogResult result, NSURL *resultURL, NSError *error) {
+                                                      if (error) {
+                                                          // Error launching the dialog or publishing a story.
+                                                          NSLog([NSString stringWithFormat:@"Error publishing story: %@", error.description]);
+                                                      } else {
+                                                          if (result == FBWebDialogResultDialogNotCompleted) {
+                                                              // User cancelled.
+                                                              NSLog(@"User cancelled.");
+                                                          } else {
+                                                              // Handle the publish feed callback
+                                                              NSDictionary *urlParams = [self parseURLParams:[resultURL query]];
+                                                              
+                                                              if (![urlParams valueForKey:@"post_id"]) {
+                                                                  // User canceled.
+                                                                  NSLog(@"User cancelled.");
+                                                                  
+                                                              } else {
+                                                                  // User clicked the Share button
+                                                                  NSString *result = [NSString stringWithFormat: @"Posted story, id: %@", [urlParams valueForKey:@"post_id"]];
+                                                                  NSLog(@"result %@", result);
+                                                              }
+                                                          }
+                                                      }
+                                                  }];
+    }
+
+
+
+}
+//Publish through Graph API
+-(IBAction)btnFacebookSharing_Clicked1:(id)sender{
     NSMutableDictionary<FBGraphObject> *object =
     [FBGraphObject openGraphObjectForPostWithType:@"salebuddy:sale"
                                             title:@"Calculated a Sale"
@@ -866,7 +950,7 @@
     }
     
 }
-
+/*
 - (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication
@@ -882,6 +966,37 @@
     
     return urlWasHandled;
 }
+ */
+
+// In order to process the response you get from interacting with the Facebook login process
+// and to handle any deep linking calls from Facebook
+// you need to override application:openURL:sourceApplication:annotation:
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    
+    BOOL wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication fallbackHandler:^(FBAppCall *call) {
+        if([[call appLinkData] targetURL] != nil) {
+            // get the object ID string from the deep link URL
+            // we use the substringFromIndex so that we can delete the leading '/' from the targetURL
+            NSString *objectId = [[[call appLinkData] targetURL].path substringFromIndex:1];
+            
+            // now handle the deep link
+            // write whatever code you need to show a view controller that displays the object, etc.
+            [[[UIAlertView alloc] initWithTitle:@"Directed from Facebook"
+                                        message:[NSString stringWithFormat:@"Deep link to %@", objectId]
+                                       delegate:self
+                              cancelButtonTitle:@"OK!"
+                              otherButtonTitles:nil] show];
+        } else {
+            //
+            NSLog([NSString stringWithFormat:@"Unhandled deep link: %@", [[call appLinkData] targetURL]]);
+        }
+    }];
+    
+    return wasHandled;
+}
 
 -(void)bannerView:(ADBannerView *)aBanner didFailToReceiveAdWithError:(NSError *)error{
     if(self.bannerIsVisible){
@@ -891,6 +1006,8 @@
         self.bannerIsVisible=NO;
     }
 }
+
+
 
 
 @end
