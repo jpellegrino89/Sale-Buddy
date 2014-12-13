@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5D0BEF321916DB9300E596C5 /* wall@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5D0BEF311916DB9300E596C5 /* wall@2x.jpg */; };
 		5D0D63A718B0FB4F0058672D /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0D63A618B0FB4F0058672D /* FacebookSDK.framework */; };
 		5D0D63A918B121FE0058672D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0D63A818B121FE0058672D /* QuartzCore.framework */; };
 		5D0D63B918BD5D030058672D /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0D63B818BD5D030058672D /* LoginView.m */; };
@@ -24,10 +23,7 @@
 		5D5EDBD4191E517700013F18 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5EDBCA191E517700013F18 /* iTunesArtwork.png */; };
 		5D5EDBD5191E517700013F18 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5EDBCB191E517700013F18 /* iTunesArtwork@2x.png */; };
 		5D5EDBD7191E542F00013F18 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5EDBD6191E542F00013F18 /* Twitter.framework */; };
-		5D5EDBDB191E642200013F18 /* white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5EDBDA191E642200013F18 /* white@2x.png */; };
 		5D664FB519168BD400B82925 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D664FB419168BD400B82925 /* UIImage+ImageEffects.m */; };
-		5D664FB81916937900B82925 /* blue@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5D664FB71916937900B82925 /* blue@2x.jpg */; };
-		5D664FBA191695EB00B82925 /* water@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5D664FB9191695EB00B82925 /* water@2x.jpg */; };
 		5D75084D1812C6B600C62D34 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D75084C1812C6B600C62D34 /* Foundation.framework */; };
 		5D75084F1812C6B600C62D34 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D75084E1812C6B600C62D34 /* CoreGraphics.framework */; };
 		5D7508511812C6B600C62D34 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D7508501812C6B600C62D34 /* UIKit.framework */; };
@@ -61,7 +57,10 @@
 		5D82C6AD18D91FAA004DD889 /* Gotham-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5D82C69D18D91FAA004DD889 /* Gotham-Black.otf */; };
 		5DA641961925B26F00423983 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA641951925B26F00423983 /* iAd.framework */; };
 		5DA8C62E18DF125B004B491F /* background2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DA8C62D18DF125B004B491F /* background2@2x.png */; };
-		5DA8C63418E6F8F9004B491F /* Profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DA8C63318E6F8F9004B491F /* Profile@2x.png */; };
+		5DAFBB2719786F3B00C96ACD /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DAFBB2619786F3A00C96ACD /* NotificationCenter.framework */; };
+		5DAFBB2D19786F3B00C96ACD /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAFBB2C19786F3B00C96ACD /* TodayViewController.m */; };
+		5DAFBB2F19786F3B00C96ACD /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DAFBB2E19786F3B00C96ACD /* MainInterface.storyboard */; };
+		5DAFBB3219786F3B00C96ACD /* com.almostready.discountedPrice.Sale-Buddy-Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5DAFBB2519786F3A00C96ACD /* com.almostready.discountedPrice.Sale-Buddy-Widget.appex */; };
 		5DDEA21818A7CA3A00FA3892 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D75085E1812C6B600C62D34 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -73,10 +72,37 @@
 			remoteGlobalIDString = 5D7508481812C6B600C62D34;
 			remoteInfo = "Sale Buddy";
 		};
+		5DAFBB3019786F3B00C96ACD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5D7508411812C6B600C62D34 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5DAFBB2419786F3A00C96ACD;
+			remoteInfo = "Sale Buddy Widget";
+		};
+		5DAFBB3319786F3B00C96ACD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5D7508411812C6B600C62D34 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5DAFBB2419786F3A00C96ACD;
+			remoteInfo = "Sale Buddy Widget";
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5DAFBB3819786F3B00C96ACD /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5DAFBB3219786F3B00C96ACD /* com.almostready.discountedPrice.Sale-Buddy-Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		5D0BEF311916DB9300E596C5 /* wall@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "wall@2x.jpg"; path = "../../../../Downloads/wall@2x.jpg"; sourceTree = "<group>"; };
 		5D0D63A618B0FB4F0058672D /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		5D0D63A818B121FE0058672D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5D0D63B718BD5D030058672D /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
@@ -94,11 +120,8 @@
 		5D5EDBCA191E517700013F18 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		5D5EDBCB191E517700013F18 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		5D5EDBD6191E542F00013F18 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
-		5D5EDBDA191E642200013F18 /* white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "white@2x.png"; path = "../../../Desktop/white@2x.png"; sourceTree = "<group>"; };
 		5D664FB419168BD400B82925 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageEffects.m"; path = "../../../../Downloads/UIImageEffects/UIImageEffects/UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		5D664FB619168C1400B82925 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageEffects.h"; path = "../../../../Downloads/UIImageEffects/UIImageEffects/UIImage+ImageEffects.h"; sourceTree = "<group>"; };
-		5D664FB71916937900B82925 /* blue@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "blue@2x.jpg"; path = "../../../../Downloads/blue@2x.jpg"; sourceTree = "<group>"; };
-		5D664FB9191695EB00B82925 /* water@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "water@2x.jpg"; path = "../../../../Downloads/water@2x.jpg"; sourceTree = "<group>"; };
 		5D7508491812C6B600C62D34 /* Sale Buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sale Buddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D75084C1812C6B600C62D34 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5D75084E1812C6B600C62D34 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -139,7 +162,12 @@
 		5D82C69D18D91FAA004DD889 /* Gotham-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Black.otf"; sourceTree = "<group>"; };
 		5DA641951925B26F00423983 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		5DA8C62D18DF125B004B491F /* background2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background2@2x.png"; sourceTree = "<group>"; };
-		5DA8C63318E6F8F9004B491F /* Profile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Profile@2x.png"; path = "../../../../Desktop/Profile@2x.png"; sourceTree = "<group>"; };
+		5DAFBB2519786F3A00C96ACD /* com.almostready.discountedPrice.Sale-Buddy-Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "com.almostready.discountedPrice.Sale-Buddy-Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DAFBB2619786F3A00C96ACD /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		5DAFBB2A19786F3B00C96ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DAFBB2B19786F3B00C96ACD /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
+		5DAFBB2C19786F3B00C96ACD /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		5DAFBB2E19786F3B00C96ACD /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +196,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5DAFBB2219786F3A00C96ACD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DAFBB2719786F3B00C96ACD /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -192,10 +228,10 @@
 		5D7508401812C6B600C62D34 = {
 			isa = PBXGroup;
 			children = (
-				5D5EDBDA191E642200013F18 /* white@2x.png */,
 				5D5EDBC1191E517700013F18 /* Artwork */,
 				5D7508521812C6B600C62D34 /* Sale Buddy */,
 				5D7508741812C6B700C62D34 /* Sale BuddyTests */,
+				5DAFBB2819786F3B00C96ACD /* Sale Buddy Widget */,
 				5D75084B1812C6B600C62D34 /* Frameworks */,
 				5D75084A1812C6B600C62D34 /* Products */,
 			);
@@ -206,6 +242,7 @@
 			children = (
 				5D7508491812C6B600C62D34 /* Sale Buddy.app */,
 				5D75086D1812C6B700C62D34 /* Sale BuddyTests.xctest */,
+				5DAFBB2519786F3A00C96ACD /* com.almostready.discountedPrice.Sale-Buddy-Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -222,6 +259,7 @@
 				5D75084E1812C6B600C62D34 /* CoreGraphics.framework */,
 				5D7508501812C6B600C62D34 /* UIKit.framework */,
 				5D75086E1812C6B700C62D34 /* XCTest.framework */,
+				5DAFBB2619786F3A00C96ACD /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -236,9 +274,6 @@
 				5D75085E1812C6B600C62D34 /* Main.storyboard */,
 				5D0D63B718BD5D030058672D /* LoginView.h */,
 				5D0D63B818BD5D030058672D /* LoginView.m */,
-				5D0BEF311916DB9300E596C5 /* wall@2x.jpg */,
-				5D664FB71916937900B82925 /* blue@2x.jpg */,
-				5D664FB9191695EB00B82925 /* water@2x.jpg */,
 				5DA8C62D18DF125B004B491F /* background2@2x.png */,
 				5D7508611812C6B600C62D34 /* FirstViewController.h */,
 				5D7508621812C6B600C62D34 /* FirstViewController.m */,
@@ -253,7 +288,6 @@
 		5D7508531812C6B600C62D34 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5DA8C63318E6F8F9004B491F /* Profile@2x.png */,
 				5D82C68E18D91FAA004DD889 /* Gotham-BookItalic.otf */,
 				5D82C68F18D91FAA004DD889 /* Gotham-ThinItalic.otf */,
 				5D82C69018D91FAA004DD889 /* Gotham-MediumItalic.otf */,
@@ -298,6 +332,25 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		5DAFBB2819786F3B00C96ACD /* Sale Buddy Widget */ = {
+			isa = PBXGroup;
+			children = (
+				5DAFBB2B19786F3B00C96ACD /* TodayViewController.h */,
+				5DAFBB2C19786F3B00C96ACD /* TodayViewController.m */,
+				5DAFBB2E19786F3B00C96ACD /* MainInterface.storyboard */,
+				5DAFBB2919786F3B00C96ACD /* Supporting Files */,
+			);
+			path = "Sale Buddy Widget";
+			sourceTree = "<group>";
+		};
+		5DAFBB2919786F3B00C96ACD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5DAFBB2A19786F3B00C96ACD /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -308,10 +361,13 @@
 				5D7508451812C6B600C62D34 /* Sources */,
 				5D7508461812C6B600C62D34 /* Frameworks */,
 				5D7508471812C6B600C62D34 /* Resources */,
+				5DAFBB3819786F3B00C96ACD /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5DAFBB3119786F3B00C96ACD /* PBXTargetDependency */,
+				5DAFBB3419786F3B00C96ACD /* PBXTargetDependency */,
 			);
 			name = "Sale Buddy";
 			productName = "Sale Buddy";
@@ -336,6 +392,23 @@
 			productReference = 5D75086D1812C6B700C62D34 /* Sale BuddyTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		5DAFBB2419786F3A00C96ACD /* Sale Buddy Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DAFBB3719786F3B00C96ACD /* Build configuration list for PBXNativeTarget "Sale Buddy Widget" */;
+			buildPhases = (
+				5DAFBB2119786F3A00C96ACD /* Sources */,
+				5DAFBB2219786F3A00C96ACD /* Frameworks */,
+				5DAFBB2319786F3A00C96ACD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Sale Buddy Widget";
+			productName = "Sale Buddy Widget";
+			productReference = 5DAFBB2519786F3A00C96ACD /* com.almostready.discountedPrice.Sale-Buddy-Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -350,6 +423,10 @@
 					};
 					5D75086C1812C6B700C62D34 = {
 						TestTargetID = 5D7508481812C6B600C62D34;
+					};
+					5DAFBB2419786F3A00C96ACD = {
+						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = LC54J5UVDA;
 					};
 				};
 			};
@@ -368,6 +445,7 @@
 			targets = (
 				5D7508481812C6B600C62D34 /* Sale Buddy */,
 				5D75086C1812C6B700C62D34 /* Sale BuddyTests */,
+				5DAFBB2419786F3A00C96ACD /* Sale Buddy Widget */,
 			);
 		};
 /* End PBXProject section */
@@ -386,10 +464,8 @@
 				5D5EDBD0191E517700013F18 /* Icon-Small.png in Resources */,
 				5D82C69F18D91FAA004DD889 /* Gotham-ThinItalic.otf in Resources */,
 				5D82C6A118D91FAA004DD889 /* Gotham-BlackItalic.otf in Resources */,
-				5D664FB81916937900B82925 /* blue@2x.jpg in Resources */,
 				5D82C6A318D91FAA004DD889 /* Gotham-UltraItalic.otf in Resources */,
 				5D82C6A218D91FAA004DD889 /* Gotham-XLightItalic.otf in Resources */,
-				5DA8C63418E6F8F9004B491F /* Profile@2x.png in Resources */,
 				5D82C6A918D91FAA004DD889 /* Gotham-Thin.otf in Resources */,
 				5D5EDBD3191E517700013F18 /* Icon@2x.png in Resources */,
 				5D5EDBCE191E517700013F18 /* Icon-Small-40.png in Resources */,
@@ -402,18 +478,15 @@
 				5D7508571812C6B600C62D34 /* InfoPlist.strings in Resources */,
 				5D82C6A818D91FAA004DD889 /* Gotham-Light.otf in Resources */,
 				5DA8C62E18DF125B004B491F /* background2@2x.png in Resources */,
-				5D0BEF321916DB9300E596C5 /* wall@2x.jpg in Resources */,
 				5D82C6A418D91FAA004DD889 /* Gotham-LightItalic.otf in Resources */,
 				5D82C6AC18D91FAA004DD889 /* Gotham-Medium.otf in Resources */,
 				5D82C69E18D91FAA004DD889 /* Gotham-BookItalic.otf in Resources */,
-				5D664FBA191695EB00B82925 /* water@2x.jpg in Resources */,
 				5D82C6A618D91FAA004DD889 /* Gotham-Bold.otf in Resources */,
 				5D5EDBD5191E517700013F18 /* iTunesArtwork@2x.png in Resources */,
 				5D5EDBD1191E517700013F18 /* Icon-Small@2x.png in Resources */,
 				5D5EDBD2191E517700013F18 /* Icon.png in Resources */,
 				5D82C6AB18D91FAA004DD889 /* Gotham-Ultra.otf in Resources */,
 				5D0D63BF18BD71550058672D /* wallpaper@2x.jpg in Resources */,
-				5D5EDBDB191E642200013F18 /* white@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +495,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D7508791812C6B700C62D34 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DAFBB2319786F3A00C96ACD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DAFBB2F19786F3B00C96ACD /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +530,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5DAFBB2119786F3A00C96ACD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DAFBB2D19786F3B00C96ACD /* TodayViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -456,6 +545,16 @@
 			isa = PBXTargetDependency;
 			target = 5D7508481812C6B600C62D34 /* Sale Buddy */;
 			targetProxy = 5D7508721812C6B700C62D34 /* PBXContainerItemProxy */;
+		};
+		5DAFBB3119786F3B00C96ACD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5DAFBB2419786F3A00C96ACD /* Sale Buddy Widget */;
+			targetProxy = 5DAFBB3019786F3B00C96ACD /* PBXContainerItemProxy */;
+		};
+		5DAFBB3419786F3B00C96ACD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5DAFBB2419786F3A00C96ACD /* Sale Buddy Widget */;
+			targetProxy = 5DAFBB3319786F3B00C96ACD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -639,6 +738,42 @@
 			};
 			name = Release;
 		};
+		5DAFBB3519786F3B00C96ACD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "Sale Buddy Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "com.almostready.discountedPrice.$(TARGET_NAME:rfc1034identifier)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		5DAFBB3619786F3B00C96ACD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "Sale Buddy Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "com.almostready.discountedPrice.$(TARGET_NAME:rfc1034identifier)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -665,6 +800,15 @@
 			buildConfigurations = (
 				5D7508821812C6B700C62D34 /* Debug */,
 				5D7508831812C6B700C62D34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5DAFBB3719786F3B00C96ACD /* Build configuration list for PBXNativeTarget "Sale Buddy Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DAFBB3519786F3B00C96ACD /* Debug */,
+				5DAFBB3619786F3B00C96ACD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Sale Buddy Widget.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>Sale Buddy.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +23,11 @@
 			<true/>
 		</dict>
 		<key>5D75086C1812C6B700C62D34</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5DAFBB2419786F3A00C96ACD</key>
 		<dict>
 			<key>primary</key>
 			<true/>

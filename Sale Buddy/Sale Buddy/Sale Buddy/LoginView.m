@@ -109,7 +109,7 @@
     
     
     
-    FBLoginView *loginView = [[FBLoginView alloc] initWithReadPermissions:@[@"basic_info", @"email", @"user_likes"]];
+    FBLoginView *loginView = [[FBLoginView alloc] initWithReadPermissions:@[@"public_profile", @"email", @"user_likes"]];
     loginView.delegate = self;
     loginView.frame=CGRectMake(0, 0, 0, 0);
     
